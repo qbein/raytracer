@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4538845D13296AA3002A4196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4538845C13296AA3002A4196 /* Foundation.framework */; };
 		4538846013296AA3002A4196 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538845F13296AA3002A4196 /* main.m */; };
+		4538847413296EA4002A4196 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538847113296EA4002A4196 /* Scene.m */; };
+		4538847513296EA4002A4196 /* Tracer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538847313296EA4002A4196 /* Tracer.m */; };
+		4538847813297204002A4196 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538847713297204002A4196 /* Image.m */; };
+		45388483132980D7002A4196 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45388482132980D7002A4196 /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,8 +31,15 @@
 		4538845813296AA3002A4196 /* raytracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		4538845C13296AA3002A4196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4538845F13296AA3002A4196 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4538846213296AA3002A4196 /* raytracer-Prefix.pch */ = {isa = PBXFileReference; path = "raytracer-Prefix.pch"; sourceTree = "<group>"; };
+		4538846213296AA3002A4196 /* raytracer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "raytracer-Prefix.pch"; sourceTree = "<group>"; };
 		4538846313296AA3002A4196 /* raytracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = raytracer.1; sourceTree = "<group>"; };
+		4538847013296EA4002A4196 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = Classes/Scene.h; sourceTree = "<group>"; };
+		4538847113296EA4002A4196 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Scene.m; path = Classes/Scene.m; sourceTree = "<group>"; };
+		4538847213296EA4002A4196 /* Tracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tracer.h; path = Classes/Tracer.h; sourceTree = "<group>"; };
+		4538847313296EA4002A4196 /* Tracer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tracer.m; path = Classes/Tracer.m; sourceTree = "<group>"; };
+		4538847613297204002A4196 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = Classes/Image.h; sourceTree = "<group>"; };
+		4538847713297204002A4196 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = Classes/Image.m; sourceTree = "<group>"; };
+		45388482132980D7002A4196 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45388483132980D7002A4196 /* AppKit.framework in Frameworks */,
 				4538845D13296AA3002A4196 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +58,7 @@
 		4538844D13296AA3002A4196 = {
 			isa = PBXGroup;
 			children = (
+				45388482132980D7002A4196 /* AppKit.framework */,
 				4538845E13296AA3002A4196 /* raytracer */,
 				4538845B13296AA3002A4196 /* Frameworks */,
 				4538845913296AA3002A4196 /* Products */,
@@ -71,6 +84,7 @@
 		4538845E13296AA3002A4196 /* raytracer */ = {
 			isa = PBXGroup;
 			children = (
+				4538846913296AB3002A4196 /* Classes */,
 				4538845F13296AA3002A4196 /* main.m */,
 				4538846313296AA3002A4196 /* raytracer.1 */,
 				4538846113296AA3002A4196 /* Supporting Files */,
@@ -84,6 +98,19 @@
 				4538846213296AA3002A4196 /* raytracer-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4538846913296AB3002A4196 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4538847013296EA4002A4196 /* Scene.h */,
+				4538847113296EA4002A4196 /* Scene.m */,
+				4538847213296EA4002A4196 /* Tracer.h */,
+				4538847313296EA4002A4196 /* Tracer.m */,
+				4538847613297204002A4196 /* Image.h */,
+				4538847713297204002A4196 /* Image.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4538846013296AA3002A4196 /* main.m in Sources */,
+				4538847413296EA4002A4196 /* Scene.m in Sources */,
+				4538847513296EA4002A4196 /* Tracer.m in Sources */,
+				4538847813297204002A4196 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,12 +209,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "raytracer/raytracer-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				LD_OPENMP_FLAGS = "-fopenmp";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 			};
 			name = Debug;
 		};
@@ -192,12 +228,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "raytracer/raytracer-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				LD_OPENMP_FLAGS = "-fopenmp";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 			};
 			name = Release;
 		};
@@ -220,6 +262,7 @@
 				4538846813296AA3002A4196 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
