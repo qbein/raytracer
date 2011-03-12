@@ -12,15 +12,18 @@
 #import "Scene.h"
 #import "Image.h"
 
+#define MAX_DEPTH 1000
+
 @interface Tracer : NSObject {
-    int _width;
-    int _height;    
+    int _width, _height;    
+    NSString* _filename;
     Scene* _scene;
     Image* _image;
 }
 
 -(id)initWithWidth:(int)width
-         andHeight:(int)height;
+            height:(int)height
+     andOutputFile:(NSString*)filename;
 
 -(void)renderScene:(Scene*)scene;
 

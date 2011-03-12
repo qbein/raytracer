@@ -11,11 +11,15 @@
 @implementation Tracer
 
 -(id)initWithWidth:(int)width
-         andHeight:(int)height {
+            height:(int)height
+     andOutputFile:(NSString*)filename {
     if(![super init]) return nil;
     
     _width = width;
     _height = height;
+    
+    _filename = filename;
+    [_filename retain];
     
     _image = [[Image alloc] initWithWidth:_width andHeight:_height];
     
@@ -30,8 +34,8 @@
             [_image setColor:[NSColor colorWithDeviceRed:1.0 green:0.0 blue:0.0 alpha:1.0] AtX:x y:y];
         }
     }
-    
-    [_image writeImageToFile:@"/Users/kurt/Desktop/test.tiff"];
+        
+    [_image writeImageToFile:_filename];
 }
 
 - (void)dealloc {
@@ -40,6 +44,9 @@
     
     [_scene release];
     _scene = nil;
+    
+    [_filename release];
+    _filename = nil;
     
     [super dealloc];
 }
