@@ -13,6 +13,9 @@
 		4538847513296EA4002A4196 /* Tracer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538847313296EA4002A4196 /* Tracer.m */; };
 		4538847813297204002A4196 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538847713297204002A4196 /* Image.m */; };
 		45388483132980D7002A4196 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45388482132980D7002A4196 /* AppKit.framework */; };
+		45388486132B7D22002A4196 /* Ray.m in Sources */ = {isa = PBXBuildFile; fileRef = 45388485132B7D22002A4196 /* Ray.m */; };
+		4538848A132B7DE1002A4196 /* Primitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 45388489132B7DE1002A4196 /* Primitive.m */; };
+		4538848D132B7DF5002A4196 /* Sphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538848C132B7DF5002A4196 /* Sphere.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +43,12 @@
 		4538847613297204002A4196 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = Classes/Image.h; sourceTree = "<group>"; };
 		4538847713297204002A4196 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = Classes/Image.m; sourceTree = "<group>"; };
 		45388482132980D7002A4196 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		45388484132B7D21002A4196 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ray.h; path = Classes/Ray.h; sourceTree = "<group>"; };
+		45388485132B7D22002A4196 /* Ray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ray.m; path = Classes/Ray.m; sourceTree = "<group>"; };
+		45388488132B7DE1002A4196 /* Primitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Primitive.h; path = Classes/Primitives/Primitive.h; sourceTree = "<group>"; };
+		45388489132B7DE1002A4196 /* Primitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Primitive.m; path = Classes/Primitives/Primitive.m; sourceTree = "<group>"; };
+		4538848B132B7DF5002A4196 /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sphere.h; path = Classes/Primitives/Sphere.h; sourceTree = "<group>"; };
+		4538848C132B7DF5002A4196 /* Sphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sphere.m; path = Classes/Primitives/Sphere.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +112,28 @@
 		4538846913296AB3002A4196 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				45388487132B7DC2002A4196 /* Primitives */,
 				4538847013296EA4002A4196 /* Scene.h */,
 				4538847113296EA4002A4196 /* Scene.m */,
 				4538847213296EA4002A4196 /* Tracer.h */,
 				4538847313296EA4002A4196 /* Tracer.m */,
 				4538847613297204002A4196 /* Image.h */,
 				4538847713297204002A4196 /* Image.m */,
+				45388484132B7D21002A4196 /* Ray.h */,
+				45388485132B7D22002A4196 /* Ray.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		45388487132B7DC2002A4196 /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				45388488132B7DE1002A4196 /* Primitive.h */,
+				45388489132B7DE1002A4196 /* Primitive.m */,
+				4538848B132B7DF5002A4196 /* Sphere.h */,
+				4538848C132B7DF5002A4196 /* Sphere.m */,
+			);
+			name = Primitives;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +190,9 @@
 				4538847413296EA4002A4196 /* Scene.m in Sources */,
 				4538847513296EA4002A4196 /* Tracer.m in Sources */,
 				4538847813297204002A4196 /* Image.m in Sources */,
+				45388486132B7D22002A4196 /* Ray.m in Sources */,
+				4538848A132B7DE1002A4196 /* Primitive.m in Sources */,
+				4538848D132B7DF5002A4196 /* Sphere.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

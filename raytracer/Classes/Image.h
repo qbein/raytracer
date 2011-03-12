@@ -10,8 +10,7 @@
 #import <AppKit/AppKit.h>
 
 @interface Image : NSObject {
-    int _width;
-    int _height;
+    int _width, _height;
     NSBitmapImageRep* imageRep;
     NSData* pixels;
 }
