@@ -30,18 +30,18 @@
     
     // TODO: Optimize with GCD block iterating?
     for(int y=0; y<_height; y++) {
-        float intensity = ((float) y+1) / _height;
-        
         for(int x=0; x<_width; x++) {
-            // TODO: remove test output
-            [image setColor:[NSColor colorWithDeviceRed:intensity green:0.0 blue:intensity alpha:1.0] AtX:x y:y];
-            
             Ray* ray = [[Ray alloc] initWithX:x y:y andMaxLength:MAX_DEPTH];
             
             // TODO: for each object in scene find any intersections with ray
-            // TODO: for each intersection:
-            // TODO: for each light in scene:
-            // TODO: if light is not in shadow, add light to summarized color
+            for (Primitive* primitive in scene.primitives) {
+                if([primitive intersectsRay:ray]) {
+                    // TODO: get intersection point
+                    for (Light* light in scene.lights) {
+                        // TODO: add light to summarized color if in direct light
+                    }
+                }
+            }
         }
     }
         

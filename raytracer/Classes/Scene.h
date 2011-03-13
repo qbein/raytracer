@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Vendor/JSON/JSON.h"
 #import "Categories/NSColor+RGBString.h"
-#import "Sphere.h"
+#import "Primitives/Sphere.h"
 #import "Light.h"
 
 @interface Scene : NSObject {
-    NSMutableArray* objects;
 }
+
+@property (retain) NSMutableArray* lights;
+@property (retain) NSMutableArray* primitives;
 
 -(id)initFromFile:(NSString*)filename;
 

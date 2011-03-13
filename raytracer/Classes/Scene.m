@@ -8,13 +8,14 @@
 
 #import "Scene.h"
 
-#define OBJECT_LIMIT 10
-
 @interface Scene (hidden)
 +(int)intValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict;
 @end
 
 @implementation Scene
+
+@synthesize lights;
+@synthesize primitives;
 
 +(int)intValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict {
     return [[dict objectForKey:key] intValue];
@@ -23,7 +24,8 @@
 -(id)init {
     if(![super init]) return nil;
     
-    objects = [[NSMutableArray alloc] initWithCapacity:OBJECT_LIMIT];
+    self.primitives = [[NSMutableArray alloc] init];
+    self.lights = [[NSMutableArray alloc] init];
     
     return self;
 }
@@ -66,42 +68,39 @@
         NSLog(@"No objects in scene (JSON parse error?)");
         return nil;
     }
-    else if([scene count] > OBJECT_LIMIT) {
-        NSLog(@"Too many objects in scene (max OBJECT_LIMIT)");
-        return nil;
-    }
     
     BOOL* invalidObject = NO;
     [scene enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         id object = nil;
  
         if([key isEqualToString:@"light"]) {
-            object = [[Light alloc] initWithX:[Scene intValueForKey:@"x" inDictionary:obj]
-                                            y:[Scene intValueForKey:@"y" inDictionary:obj]
-                                            z:[Scene intValueForKey:@"z" inDictionary:obj]
-                                       radius:[Scene intValueForKey:@"r" inDictionary:obj]
-                                     andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]];
+            object = [Light alloc];
+            [self.lights addObject:object];
         }
         else if([key isEqualToString:@"sphere"]) {
-            object = [[Sphere alloc] initWidthX:[Scene intValueForKey:@"x" inDictionary:obj]
-                                              y:[Scene intValueForKey:@"y" inDictionary:obj]
-                                              z:[Scene intValueForKey:@"z" inDictionary:obj]
-                                         radius:[Scene intValueForKey:@"r" inDictionary:obj]
-                                       andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]];
+            object = [Sphere alloc];
+            [self.primitives addObject:object];
         }
         else {
-            NSLog(@"Unknown primitive: %@", key);
+            NSLog(@"Unknown object: %@", key);
             *stop = YES;
         }
         
         if(object) {
-            [objects addObject:object];
-            NSLog(@"Added %@", object);
+            [[object initWithX:[Scene intValueForKey:@"x" inDictionary:obj]
+                             y:[Scene intValueForKey:@"y" inDictionary:obj]
+                             z:[Scene intValueForKey:@"z" inDictionary:obj]
+                        radius:[Scene intValueForKey:@"r" inDictionary:obj]
+                      andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]] autorelease];
         }
     }];
     
+    NSLog(@"Added %ld light(s): %@", [self.lights count], self.lights);
+    NSLog(@"Added %ld primitive(s): %@", [self.primitives count], self.primitives);
+    
     if(invalidObject) {
-        [objects release];
+        [self.lights release];
+        [self.primitives release];
         return nil;
     }
     
@@ -109,7 +108,8 @@
 }
 
 - (void)dealloc {
-    [objects release];
+    [self.lights release];
+    [self.primitives release];
     [super dealloc];
 }
 

@@ -18,6 +18,6 @@
 @property int radius;
 @property (retain) NSColor* color;
 
-- (id)initWidthX:(int)x y:(int)y z:(int)z radius:(int)r andColor:(NSColor*)c;
+- (id)initWithX:(int)x y:(int)y z:(int)z radius:(int)r andColor:(NSColor*)c;
 
 @end

@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
-#import "Primitive.h"
 
-@interface Light : Primitive {
+@interface Light : NSObject {
 }
 
 @property int positionX;

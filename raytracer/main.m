@@ -52,15 +52,15 @@ int main (int argc, const char * argv[])
     Tracer *tracer = [[Tracer alloc] initWithWidth:300 height:200 andOutputFile:outputFile];
     
     Scene *scene = [[Scene alloc] initFromFile:sceneFile];
+    [scene retain];
     
     if(scene != nil) {
         [tracer renderScene:scene];
     }
     
     [fileManager release];
-    fileManager = nil;
     [scene release];
-    scene = nil;
+    
     [pool drain];
     
     NSLog(@"Done!");

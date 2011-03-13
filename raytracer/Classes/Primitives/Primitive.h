@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Ray.h"
 
 @interface Primitive : NSObject {
     
 }
+
+-(BOOL)intersectsRay:(Ray*)ray;
 
 @end

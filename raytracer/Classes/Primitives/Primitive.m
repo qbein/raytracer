@@ -21,4 +21,9 @@
     [super dealloc];
 }
 
+// TODO: Implement
+-(BOOL)intersectsRay:(Ray*)ray {
+    return NO;
+}
+
 @end
