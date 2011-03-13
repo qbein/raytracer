@@ -6,11 +6,18 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
+#import <AppKit/AppKit.h>
 #import "Primitive.h"
 
-
 @interface Sphere : Primitive {
-    int _x, _y, _z, _radius;
 }
+
+@property int positionX;
+@property int positionY;
+@property int positionZ;
+@property int radius;
+@property (retain) NSColor* color;
+
+- (id)initWidthX:(int)x y:(int)y z:(int)z radius:(int)r andColor:(NSColor*)c;
 
 @end

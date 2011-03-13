@@ -11,14 +11,13 @@
 
 #import "Scene.h"
 #import "Image.h"
+#import "Ray.h"
 
 #define MAX_DEPTH 1000
 
 @interface Tracer : NSObject {
     int _width, _height;    
     NSString* _filename;
-    Scene* _scene;
-    Image* _image;
 }
 
 -(id)initWithWidth:(int)width

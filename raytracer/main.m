@@ -17,23 +17,50 @@
 int main (int argc, const char * argv[])
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    NSFileManager* fileManager = [[NSFileManager alloc] init];
     
-    NSString* filename = @"scene.tiff";
+    NSString* outputFile = @"scene.tiff";
+    NSString* sceneFile = nil;
     
     for(int i=0; i<argc; i++) {
-        if(strlen(argv[i]) > 2 && strstr(argv[i], "-o") != NULL) {
-            filename = [[NSString stringWithUTF8String:argv[i]] substringFromIndex:2];
+        if(strlen(argv[i]) > 2) {
+            if(strstr(argv[i], "-h")) {
+                NSLog(@"Usage: raytracer -s/scenefile.json -o/outputfile.tiff");
+                return 0;
+            }
+            else if(strstr(argv[i], "-o") != NULL) {
+                outputFile = [[NSString stringWithUTF8String:argv[i]] substringFromIndex:2];
+            }
+            else if(strstr(argv[i], "-s") != NULL) {
+                sceneFile = [[NSString stringWithUTF8String:argv[i]] substringFromIndex:2];
+            }
         }
     }
     
-    NSLog(@"Rendering scene to: %@", filename);
+    if(sceneFile == nil) {
+        NSLog(@"No scene file provided (-s option)");
+        return 1;
+    }
+    if(![fileManager fileExistsAtPath:sceneFile]) {
+        NSLog(@"Provided scene path [%@] does not exist", sceneFile);
+        return 1;
+    }
     
-    Tracer *tracer = [[Tracer alloc] initWithWidth:100 height:100 andOutputFile:filename];
-    Scene *scene = [[Scene alloc] init]; // TODO: initFromFile
+    NSLog(@"Rendering scene [{%@}] to: %@", sceneFile, outputFile);
     
-    [tracer renderScene:scene];
+    // Provided output file and scene file is valid, render the scene
+    Tracer *tracer = [[Tracer alloc] initWithWidth:300 height:200 andOutputFile:outputFile];
     
+    Scene *scene = [[Scene alloc] initFromFile:sceneFile];
+    
+    if(scene != nil) {
+        [tracer renderScene:scene];
+    }
+    
+    [fileManager release];
+    fileManager = nil;
     [scene release];
+    scene = nil;
     [pool drain];
     
     NSLog(@"Done!");

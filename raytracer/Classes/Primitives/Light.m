@@ -1,15 +1,14 @@
 //
-//  Sphere.m
+//  Light.m
 //  raytracer
 //
-//  Created by Kurt Aadnøy on 12.03.11.
-//  Copyright 2011 aadnoy.info. All rights reserved.
+//  Created by Kurt Aadnøy on 13.03.11.
+//  Copyright 2011 aadnoy.com. All rights reserved.
 //
 
-#import "Sphere.h"
+#import "Light.h"
 
-
-@implementation Sphere
+@implementation Light
 
 @synthesize positionX;
 @synthesize positionY;
@@ -17,7 +16,7 @@
 @synthesize radius;
 @synthesize color;
 
-- (id)initWidthX:(int)x y:(int)y z:(int)z radius:(int)r andColor:(NSColor*)c {
+-(id)initWithX:(int)x y:(int)y z:(int)z radius:(int)r andColor:(NSColor*)c {
     if(![super init]) return nil;
     
     positionX = x;
@@ -31,6 +30,8 @@
 
 - (void)dealloc {
     [super dealloc];
+    
+    [color dealloc];
 }
 
 -(NSString*)description {

@@ -10,9 +10,12 @@
 
 
 @interface Ray : NSObject {
-    int _x, _y, _z, _length;
 }
 
--(id)initWithX:(int)x y:(int)y z:(int)z andDepth:(int)length;
+@property int originX;
+@property int originY;
+@property int length;
+
+-(id)initWithX:(int)x y:(int)y andMaxLength:(int)l;
 
 @end

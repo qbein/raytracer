@@ -11,4 +11,14 @@
 
 @implementation Primitive
 
+- (id)init {
+    if(![super init]) return nil;
+    
+    return self;
+}
+
+- (void)dealloc {
+    [super dealloc];
+}
+
 @end

@@ -11,13 +11,16 @@
 
 @implementation Ray
 
--(id)initWithX:(int)x y:(int)y z:(int)z andDepth:(int)length {
+@synthesize originX;
+@synthesize originY;
+@synthesize length;
+
+-(id)initWithX:(int)x y:(int)y andMaxLength:(int)l {
     if(![super init]) return nil;
     
-    _x = x;
-    _y = y;
-    _z = z;
-    _length = length;
+    originX = x;
+    originY = y;
+    length = l;
     
     return self;
 }

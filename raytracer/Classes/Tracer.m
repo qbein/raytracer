@@ -21,33 +21,38 @@
     _filename = filename;
     [_filename retain];
     
-    _image = [[Image alloc] initWithWidth:_width andHeight:_height];
-    
     return self;
 }
 
 -(void)renderScene:(Scene*)scene {
-    _scene = scene;
+    [scene retain];
+    Image* image = [[Image alloc] initWithWidth:_width andHeight:_height];
+    
+    // TODO: Optimize with GCD block iterating?
+    for(int y=0; y<_height; y++) {
+        float intensity = ((float) y+1) / _height;
         
-    for(NSInteger x=0; x<_width; x++) {
-        for(NSInteger y=0; y<_height; y++) {
-            [_image setColor:[NSColor colorWithDeviceRed:1.0 green:0.0 blue:0.0 alpha:1.0] AtX:x y:y];
+        for(int x=0; x<_width; x++) {
+            // TODO: remove test output
+            [image setColor:[NSColor colorWithDeviceRed:intensity green:0.0 blue:intensity alpha:1.0] AtX:x y:y];
+            
+            Ray* ray = [[Ray alloc] initWithX:x y:y andMaxLength:MAX_DEPTH];
+            
+            // TODO: for each object in scene find any intersections with ray
+            // TODO: for each intersection:
+            // TODO: for each light in scene:
+            // TODO: if light is not in shadow, add light to summarized color
         }
     }
         
-    [_image writeImageToFile:_filename];
+    [image writeImageToFile:_filename];
+    
+    [image release];
+    [scene release];
 }
 
 - (void)dealloc {
-    [_image release];
-    _image = nil;
-    
-    [_scene release];
-    _scene = nil;
-    
     [_filename release];
-    _filename = nil;
-    
     [super dealloc];
 }
 

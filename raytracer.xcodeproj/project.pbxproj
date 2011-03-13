@@ -16,6 +16,17 @@
 		45388486132B7D22002A4196 /* Ray.m in Sources */ = {isa = PBXBuildFile; fileRef = 45388485132B7D22002A4196 /* Ray.m */; };
 		4538848A132B7DE1002A4196 /* Primitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 45388489132B7DE1002A4196 /* Primitive.m */; };
 		4538848D132B7DF5002A4196 /* Sphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538848C132B7DF5002A4196 /* Sphere.m */; };
+		453884B4132CCF24002A4196 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884A3132CCF24002A4196 /* NSObject+JSON.m */; };
+		453884B5132CCF24002A4196 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884A5132CCF24002A4196 /* SBJsonParser.m */; };
+		453884B6132CCF24002A4196 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884A7132CCF24002A4196 /* SBJsonStreamParser.m */; };
+		453884B7132CCF24002A4196 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884A9132CCF24002A4196 /* SBJsonStreamParserAdapter.m */; };
+		453884B8132CCF24002A4196 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884AB132CCF24002A4196 /* SBJsonStreamParserState.m */; };
+		453884B9132CCF24002A4196 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884AD132CCF24002A4196 /* SBJsonStreamWriter.m */; };
+		453884BA132CCF24002A4196 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884AF132CCF24002A4196 /* SBJsonStreamWriterState.m */; };
+		453884BB132CCF24002A4196 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884B1132CCF24002A4196 /* SBJsonTokeniser.m */; };
+		453884BC132CCF24002A4196 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884B3132CCF24002A4196 /* SBJsonWriter.m */; };
+		453884D0132D67D7002A4196 /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884CF132D67D6002A4196 /* Light.m */; };
+		453884D5132D706A002A4196 /* NSColor+RGBString.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884D4132D706A002A4196 /* NSColor+RGBString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +60,30 @@
 		45388489132B7DE1002A4196 /* Primitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Primitive.m; path = Classes/Primitives/Primitive.m; sourceTree = "<group>"; };
 		4538848B132B7DF5002A4196 /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sphere.h; path = Classes/Primitives/Sphere.h; sourceTree = "<group>"; };
 		4538848C132B7DF5002A4196 /* Sphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sphere.m; path = Classes/Primitives/Sphere.m; sourceTree = "<group>"; };
+		453884A1132CCF24002A4196 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		453884A2132CCF24002A4196 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
+		453884A3132CCF24002A4196 /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
+		453884A4132CCF24002A4196 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		453884A5132CCF24002A4196 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		453884A6132CCF24002A4196 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		453884A7132CCF24002A4196 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		453884A8132CCF24002A4196 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		453884A9132CCF24002A4196 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		453884AA132CCF24002A4196 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		453884AB132CCF24002A4196 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		453884AC132CCF24002A4196 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		453884AD132CCF24002A4196 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		453884AE132CCF24002A4196 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		453884AF132CCF24002A4196 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		453884B0132CCF24002A4196 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		453884B1132CCF24002A4196 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		453884B2132CCF24002A4196 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		453884B3132CCF24002A4196 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		453884BD132CD111002A4196 /* scene.json */ = {isa = PBXFileReference; explicitFileType = sourcecode.javascript; fileEncoding = 4; name = scene.json; path = "Supporting Files/scene.json"; sourceTree = "<group>"; };
+		453884CE132D67D6002A4196 /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Light.h; path = Classes/Primitives/Light.h; sourceTree = "<group>"; };
+		453884CF132D67D6002A4196 /* Light.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Light.m; path = Classes/Primitives/Light.m; sourceTree = "<group>"; };
+		453884D3132D706A002A4196 /* NSColor+RGBString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+RGBString.h"; path = "Classes/Categories/NSColor+RGBString.h"; sourceTree = "<group>"; };
+		453884D4132D706A002A4196 /* NSColor+RGBString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+RGBString.m"; path = "Classes/Categories/NSColor+RGBString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +102,6 @@
 		4538844D13296AA3002A4196 = {
 			isa = PBXGroup;
 			children = (
-				45388482132980D7002A4196 /* AppKit.framework */,
 				4538845E13296AA3002A4196 /* raytracer */,
 				4538845B13296AA3002A4196 /* Frameworks */,
 				4538845913296AA3002A4196 /* Products */,
@@ -85,6 +119,7 @@
 		4538845B13296AA3002A4196 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45388482132980D7002A4196 /* AppKit.framework */,
 				4538845C13296AA3002A4196 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -105,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4538846213296AA3002A4196 /* raytracer-Prefix.pch */,
+				453884BD132CD111002A4196 /* scene.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -112,6 +148,8 @@
 		4538846913296AB3002A4196 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				453884D2132D6FCD002A4196 /* Categories */,
+				4538849F132CCF23002A4196 /* Vendor */,
 				45388487132B7DC2002A4196 /* Primitives */,
 				4538847013296EA4002A4196 /* Scene.h */,
 				4538847113296EA4002A4196 /* Scene.m */,
@@ -132,8 +170,54 @@
 				45388489132B7DE1002A4196 /* Primitive.m */,
 				4538848B132B7DF5002A4196 /* Sphere.h */,
 				4538848C132B7DF5002A4196 /* Sphere.m */,
+				453884CE132D67D6002A4196 /* Light.h */,
+				453884CF132D67D6002A4196 /* Light.m */,
 			);
 			name = Primitives;
+			sourceTree = "<group>";
+		};
+		4538849F132CCF23002A4196 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				453884A0132CCF24002A4196 /* JSON */,
+			);
+			name = Vendor;
+			path = Classes/Vendor;
+			sourceTree = "<group>";
+		};
+		453884A0132CCF24002A4196 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				453884A1132CCF24002A4196 /* JSON.h */,
+				453884A2132CCF24002A4196 /* NSObject+JSON.h */,
+				453884A3132CCF24002A4196 /* NSObject+JSON.m */,
+				453884A4132CCF24002A4196 /* SBJsonParser.h */,
+				453884A5132CCF24002A4196 /* SBJsonParser.m */,
+				453884A6132CCF24002A4196 /* SBJsonStreamParser.h */,
+				453884A7132CCF24002A4196 /* SBJsonStreamParser.m */,
+				453884A8132CCF24002A4196 /* SBJsonStreamParserAdapter.h */,
+				453884A9132CCF24002A4196 /* SBJsonStreamParserAdapter.m */,
+				453884AA132CCF24002A4196 /* SBJsonStreamParserState.h */,
+				453884AB132CCF24002A4196 /* SBJsonStreamParserState.m */,
+				453884AC132CCF24002A4196 /* SBJsonStreamWriter.h */,
+				453884AD132CCF24002A4196 /* SBJsonStreamWriter.m */,
+				453884AE132CCF24002A4196 /* SBJsonStreamWriterState.h */,
+				453884AF132CCF24002A4196 /* SBJsonStreamWriterState.m */,
+				453884B0132CCF24002A4196 /* SBJsonTokeniser.h */,
+				453884B1132CCF24002A4196 /* SBJsonTokeniser.m */,
+				453884B2132CCF24002A4196 /* SBJsonWriter.h */,
+				453884B3132CCF24002A4196 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		453884D2132D6FCD002A4196 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				453884D3132D706A002A4196 /* NSColor+RGBString.h */,
+				453884D4132D706A002A4196 /* NSColor+RGBString.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +246,7 @@
 		4538844F13296AA3002A4196 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = aadnoy.info;
+				ORGANIZATIONNAME = aadnoy.com;
 			};
 			buildConfigurationList = 4538845213296AA3002A4196 /* Build configuration list for PBXProject "raytracer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -193,6 +277,17 @@
 				45388486132B7D22002A4196 /* Ray.m in Sources */,
 				4538848A132B7DE1002A4196 /* Primitive.m in Sources */,
 				4538848D132B7DF5002A4196 /* Sphere.m in Sources */,
+				453884B4132CCF24002A4196 /* NSObject+JSON.m in Sources */,
+				453884B5132CCF24002A4196 /* SBJsonParser.m in Sources */,
+				453884B6132CCF24002A4196 /* SBJsonStreamParser.m in Sources */,
+				453884B7132CCF24002A4196 /* SBJsonStreamParserAdapter.m in Sources */,
+				453884B8132CCF24002A4196 /* SBJsonStreamParserState.m in Sources */,
+				453884B9132CCF24002A4196 /* SBJsonStreamWriter.m in Sources */,
+				453884BA132CCF24002A4196 /* SBJsonStreamWriterState.m in Sources */,
+				453884BB132CCF24002A4196 /* SBJsonTokeniser.m in Sources */,
+				453884BC132CCF24002A4196 /* SBJsonWriter.m in Sources */,
+				453884D0132D67D7002A4196 /* Light.m in Sources */,
+				453884D5132D706A002A4196 /* NSColor+RGBString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +332,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -257,6 +356,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "raytracer/raytracer-Prefix.pch";
