@@ -6,7 +6,6 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Vendor/JSON/JSON.h"
 #import "Categories/NSColor+RGBString.h"
 #import "Geometry/KASphere.h"

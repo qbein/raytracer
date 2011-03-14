@@ -6,8 +6,6 @@
 //  Copyright 2011 aadnoy.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface KAPoint : NSObject
 
 @property float x;

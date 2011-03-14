@@ -6,7 +6,6 @@
 //  Copyright 2011 aadnoy.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 #import "KAPoint.h"
 

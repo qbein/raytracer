@@ -6,9 +6,7 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
-
 #import "KAScene.h"
 #import "KAImage.h"
 #import "KARay.h"
