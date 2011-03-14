@@ -7,10 +7,9 @@
 //
 
 #import <AppKit/AppKit.h>
-#import "Primitive.h"
+#import "KAPrimitive.h"
 
-@interface Sphere : Primitive {
-}
+@interface KASphere : KAPrimitive
 
 @property float positionX;
 @property float positionY;

@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "Vendor/JSON/JSON.h"
 #import "Categories/NSColor+RGBString.h"
-#import "Primitives/Sphere.h"
-#import "Light.h"
+#import "Geometry/KASphere.h"
+#import "KALight.h"
 
-@interface Scene : NSObject {
-}
+@interface KAScene : NSObject
 
 @property (retain) NSMutableArray* lights;
 @property (retain) NSMutableArray* primitives;

@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Ray.h"
+#import "KARay.h"
 
-@interface Primitive : NSObject {   
+@interface KAPrimitive : NSObject {   
 }
 
--(float)findIntersectionsForRay:(Ray*)ray;
+-(float)findIntersectionsForRay:(KARay*)ray;
 
 @end

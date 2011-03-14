@@ -6,12 +6,12 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import "Primitive.h"
+#import "KAPrimitive.h"
 
 
-@implementation Primitive
+@implementation KAPrimitive
 
--(float)findIntersectionsForRay:(Ray*)ray {
+-(float)findIntersectionsForRay:(KARay*)ray {
     return NO;
 }
 

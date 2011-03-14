@@ -6,10 +6,10 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import "Sphere.h"
+#import "KASphere.h"
 
 
-@implementation Sphere
+@implementation KASphere
 
 @synthesize positionX;
 @synthesize positionY;
@@ -38,12 +38,30 @@
     [super dealloc];
 }
 
--(float)findIntersectionsForRay:(Ray *)ray {
-    if(ray.originX <= (self.positionX + self.radius) && ray.originX >= (self.positionX - self.radius)) {
-        if(ray.originY <= (self.positionY + self.radius) && ray.originY >= (self.positionY - self.radius)) return 0;
-    }
+-(float)findIntersectionsForRay:(KARay *)ray {
+    // vecteur dist = s.pos - r.start; 
+    KAVector* vector = [ray vectorRepresentation]; 
+    // self.positionZ - ray.startZ;
     
-    return 9999999;
+    // double B = r.dir * dist;
+    // double D = B*B - dist * dist + s.size * s.size; 
+    // if (D < 0.0f) 
+    //     return false; 
+    // double t0 = B - sqrt(D); 
+    // double t1 = B + sqrt(D);
+    // bool retvalue = false;  
+    // if ((t0 > 0.1f) && (t0 < t)) 
+    // {
+    //     t = (float)t0;
+    //     retvalue = true; 
+    // } 
+    // if ((t1 > 0.1f) && (t1 < t)) 
+    // {
+    //     t = (float)t1; 
+    //     retvalue = true; 
+    // }
+    
+    return -1.0f;
 }
 
 -(NSString*)description {

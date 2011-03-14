@@ -6,10 +6,10 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import "Image.h"
+#import "KAImage.h"
 
 
-@implementation Image
+@implementation KAImage
 
 -(id)initWithWidth:(NSInteger)width
          andHeight:(NSInteger)height {

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
-@interface Image : NSObject {
+@interface KAImage : NSObject {
     int _width, _height;
     NSBitmapImageRep* imageRep;
     NSData* pixels;

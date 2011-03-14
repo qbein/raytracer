@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
-@interface Light : NSObject {
-}
+@interface KALight : NSObject
 
 @property float positionX;
 @property float positionY;

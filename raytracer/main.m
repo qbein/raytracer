@@ -12,7 +12,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Classes/Tracer.h"
+#import "Classes/KATracer.h"
 
 int main (int argc, const char * argv[])
 {
@@ -49,10 +49,9 @@ int main (int argc, const char * argv[])
     NSLog(@"Rendering scene [{%@}] to: %@", sceneFile, outputFile);
     
     // Provided output file and scene file is valid, render the scene
-    Tracer *tracer = [[Tracer alloc] initWithWidth:300 height:200 andOutputFile:outputFile];
+    KATracer *tracer = [[KATracer alloc] initWithWidth:300 height:200 andOutputFile:outputFile];
     
-    Scene *scene = [[Scene alloc] initFromFile:sceneFile];
-    [scene retain];
+    KAScene *scene = [[KAScene alloc] initFromFile:sceneFile];
     
     if(scene != nil) {
         [tracer renderScene:scene];

@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
-#import "Scene.h"
-#import "Image.h"
-#import "Ray.h"
+#import "KAScene.h"
+#import "KAImage.h"
+#import "KARay.h"
 
 #define RAY_STARTING_POINT -1000
 #define RAY_MAX_LENGTH 99999
 
-@interface Tracer : NSObject {
+@interface KATracer : NSObject {
     int _width, _height;    
     NSString* _filename;
 }
@@ -25,7 +25,7 @@
             height:(int)height
      andOutputFile:(NSString*)filename;
 
--(void)renderScene:(Scene*)scene;
+-(void)renderScene:(KAScene*)scene;
 
 @end
 

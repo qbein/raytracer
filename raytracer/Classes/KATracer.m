@@ -6,9 +6,9 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import "Tracer.h"
+#import "KATracer.h"
 
-@implementation Tracer
+@implementation KATracer
 
 -(id)initWithWidth:(int)width
             height:(int)height
@@ -29,14 +29,14 @@
     [super dealloc];
 }
 
--(void)renderScene:(Scene*)scene {
+-(void)renderScene:(KAScene*)scene {
     [scene retain];
-    Image* image = [[Image alloc] initWithWidth:_width andHeight:_height];
+    KAImage* image = [[KAImage alloc] initWithWidth:_width andHeight:_height];
     
     // TODO: Optimize with GCD block iterating?
     for(int y=0; y<_height; y++) {
         for(int x=0; x<_width; x++) {
-            Ray* ray = [[Ray alloc] initWithX:x y:y andZ:RAY_STARTING_POINT];
+            KARay* ray = [[KARay alloc] initWithX:x y:y z:RAY_STARTING_POINT andDirection:RAY_MAX_LENGTH];
             float nearestIntersectDistance = RAY_MAX_LENGTH;
             
             for (id primitive in scene.primitives) {

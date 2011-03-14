@@ -6,9 +6,9 @@
 //  Copyright 2011 aadnoy.com. All rights reserved.
 //
 
-#import "Light.h"
+#import "KALight.h"
 
-@implementation Light
+@implementation KALight
 
 @synthesize positionX;
 @synthesize positionY;

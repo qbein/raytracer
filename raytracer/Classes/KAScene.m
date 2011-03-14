@@ -6,13 +6,13 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import "Scene.h"
+#import "KAScene.h"
 
-@interface Scene (hidden)
+@interface KAScene (hidden)
 +(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict;
 @end
 
-@implementation Scene
+@implementation KAScene
 
 @synthesize lights;
 @synthesize primitives;
@@ -74,11 +74,11 @@
         id object = nil;
  
         if([key isEqualToString:@"light"]) {
-            object = [Light alloc];
+            object = [KALight alloc];
             [self.lights addObject:object];
         }
         else if([key isEqualToString:@"sphere"]) {
-            object = [Sphere alloc];
+            object = [KASphere alloc];
             [self.primitives addObject:object];
         }
         else {
@@ -87,10 +87,10 @@
         }
         
         if(object) {
-            [[object initWithX:[Scene floatValueForKey:@"x" inDictionary:obj]
-                             y:[Scene floatValueForKey:@"y" inDictionary:obj]
-                             z:[Scene floatValueForKey:@"z" inDictionary:obj]
-                        radius:[Scene floatValueForKey:@"r" inDictionary:obj]
+            [[object initWithX:[KAScene floatValueForKey:@"x" inDictionary:obj]
+                             y:[KAScene floatValueForKey:@"y" inDictionary:obj]
+                             z:[KAScene floatValueForKey:@"z" inDictionary:obj]
+                        radius:[KAScene floatValueForKey:@"r" inDictionary:obj]
                       andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]] autorelease];
         }
     }];
