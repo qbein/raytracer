@@ -25,10 +25,10 @@
 		453884BC132CCF24002A4196 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884B3132CCF24002A4196 /* SBJsonWriter.m */; };
 		453884D5132D706A002A4196 /* NSColor+RGBString.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884D4132D706A002A4196 /* NSColor+RGBString.m */; };
 		453884D8132D7B58002A4196 /* KALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884D7132D7B54002A4196 /* KALight.m */; };
-		453884DE132EB812002A4196 /* KAVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884DD132EB7F0002A4196 /* KAVector.m */; };
 		453884E4132EBB0B002A4196 /* KAPrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E1132EBB0B002A4196 /* KAPrimitive.m */; };
 		453884E8132EBB2C002A4196 /* KAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E7132EBB2C002A4196 /* KAPoint.m */; };
 		453884EA132EBE10002A4196 /* KASphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E9132EBE0F002A4196 /* KASphere.m */; };
+		453884ED132ED530002A4196 /* KAVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884EC132ED52E002A4196 /* KAVector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,14 +49,14 @@
 		4538845F13296AA3002A4196 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4538846213296AA3002A4196 /* raytracer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "raytracer-Prefix.pch"; sourceTree = "<group>"; };
 		4538846313296AA3002A4196 /* raytracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = raytracer.1; sourceTree = "<group>"; };
-		4538847013296EA4002A4196 /* KAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; name = KAScene.h; path = Classes/KAScene.h; sourceTree = "<group>"; };
+		4538847013296EA4002A4196 /* KAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KAScene.h; path = Classes/KAScene.h; sourceTree = "<group>"; };
 		4538847113296EA4002A4196 /* KAScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAScene.m; path = Classes/KAScene.m; sourceTree = "<group>"; };
-		4538847213296EA4002A4196 /* KATracer.h */ = {isa = PBXFileReference; fileEncoding = 4; name = KATracer.h; path = Classes/KATracer.h; sourceTree = "<group>"; };
+		4538847213296EA4002A4196 /* KATracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KATracer.h; path = Classes/KATracer.h; sourceTree = "<group>"; };
 		4538847313296EA4002A4196 /* KATracer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KATracer.m; path = Classes/KATracer.m; sourceTree = "<group>"; };
-		4538847613297204002A4196 /* KAImage.h */ = {isa = PBXFileReference; fileEncoding = 4; name = KAImage.h; path = Classes/KAImage.h; sourceTree = "<group>"; };
+		4538847613297204002A4196 /* KAImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KAImage.h; path = Classes/KAImage.h; sourceTree = "<group>"; };
 		4538847713297204002A4196 /* KAImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAImage.m; path = Classes/KAImage.m; sourceTree = "<group>"; };
 		45388482132980D7002A4196 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		45388484132B7D21002A4196 /* KARay.h */ = {isa = PBXFileReference; fileEncoding = 4; name = KARay.h; path = Classes/KARay.h; sourceTree = "<group>"; };
+		45388484132B7D21002A4196 /* KARay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KARay.h; path = Classes/KARay.h; sourceTree = "<group>"; };
 		45388485132B7D22002A4196 /* KARay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KARay.m; path = Classes/KARay.m; sourceTree = "<group>"; };
 		453884A1132CCF24002A4196 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		453884A2132CCF24002A4196 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
@@ -80,16 +80,16 @@
 		453884BD132CD111002A4196 /* scene.json */ = {isa = PBXFileReference; explicitFileType = sourcecode.javascript; fileEncoding = 4; name = scene.json; path = "Supporting Files/scene.json"; sourceTree = "<group>"; };
 		453884D3132D706A002A4196 /* NSColor+RGBString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+RGBString.h"; path = "Classes/Categories/NSColor+RGBString.h"; sourceTree = "<group>"; };
 		453884D4132D706A002A4196 /* NSColor+RGBString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+RGBString.m"; path = "Classes/Categories/NSColor+RGBString.m"; sourceTree = "<group>"; };
-		453884D6132D7B52002A4196 /* KALight.h */ = {isa = PBXFileReference; fileEncoding = 4; name = KALight.h; path = Classes/KALight.h; sourceTree = "<group>"; };
+		453884D6132D7B52002A4196 /* KALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KALight.h; path = Classes/KALight.h; sourceTree = "<group>"; };
 		453884D7132D7B54002A4196 /* KALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KALight.m; path = Classes/KALight.m; sourceTree = "<group>"; };
-		453884DC132EB7E4002A4196 /* KAVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KAVector.h; path = ../../KAVector.h; sourceTree = "<group>"; };
-		453884DD132EB7F0002A4196 /* KAVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAVector.m; path = ../../KAVector.m; sourceTree = "<group>"; };
 		453884E0132EBB0B002A4196 /* KAPrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAPrimitive.h; sourceTree = "<group>"; };
 		453884E1132EBB0B002A4196 /* KAPrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAPrimitive.m; sourceTree = "<group>"; };
 		453884E2132EBB0B002A4196 /* KASphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASphere.h; sourceTree = "<group>"; };
 		453884E6132EBB2C002A4196 /* KAPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAPoint.h; sourceTree = "<group>"; };
 		453884E7132EBB2C002A4196 /* KAPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAPoint.m; sourceTree = "<group>"; };
 		453884E9132EBE0F002A4196 /* KASphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASphere.m; sourceTree = "<group>"; };
+		453884EB132ED52D002A4196 /* KAVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAVector.h; sourceTree = "<group>"; };
+		453884EC132ED52E002A4196 /* KAVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAVector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,14 +218,14 @@
 		453884DF132EBB0A002A4196 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
-				453884DC132EB7E4002A4196 /* KAVector.h */,
-				453884DD132EB7F0002A4196 /* KAVector.m */,
 				453884E0132EBB0B002A4196 /* KAPrimitive.h */,
 				453884E1132EBB0B002A4196 /* KAPrimitive.m */,
 				453884E2132EBB0B002A4196 /* KASphere.h */,
 				453884E9132EBE0F002A4196 /* KASphere.m */,
 				453884E6132EBB2C002A4196 /* KAPoint.h */,
 				453884E7132EBB2C002A4196 /* KAPoint.m */,
+				453884EB132ED52D002A4196 /* KAVector.h */,
+				453884EC132ED52E002A4196 /* KAVector.m */,
 			);
 			name = Geometry;
 			path = Classes/Geometry;
@@ -297,10 +297,10 @@
 				453884BC132CCF24002A4196 /* SBJsonWriter.m in Sources */,
 				453884D5132D706A002A4196 /* NSColor+RGBString.m in Sources */,
 				453884D8132D7B58002A4196 /* KALight.m in Sources */,
-				453884DE132EB812002A4196 /* KAVector.m in Sources */,
 				453884E4132EBB0B002A4196 /* KAPrimitive.m in Sources */,
 				453884E8132EBB2C002A4196 /* KAPoint.m in Sources */,
 				453884EA132EBE10002A4196 /* KASphere.m in Sources */,
+				453884ED132ED530002A4196 /* KAVector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
