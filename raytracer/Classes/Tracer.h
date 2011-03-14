@@ -13,7 +13,8 @@
 #import "Image.h"
 #import "Ray.h"
 
-#define MAX_DEPTH 1000
+#define RAY_STARTING_POINT -1000
+#define RAY_MAX_LENGTH 99999
 
 @interface Tracer : NSObject {
     int _width, _height;    

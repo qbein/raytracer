@@ -57,7 +57,7 @@ int main (int argc, const char * argv[])
     if(scene != nil) {
         [tracer renderScene:scene];
     }
-    
+        
     [fileManager release];
     [scene release];
     

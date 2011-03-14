@@ -24,6 +24,11 @@
     return self;
 }
 
+- (void)dealloc {
+    [_filename release];
+    [super dealloc];
+}
+
 -(void)renderScene:(Scene*)scene {
     [scene retain];
     Image* image = [[Image alloc] initWithWidth:_width andHeight:_height];
@@ -31,15 +36,25 @@
     // TODO: Optimize with GCD block iterating?
     for(int y=0; y<_height; y++) {
         for(int x=0; x<_width; x++) {
-            Ray* ray = [[Ray alloc] initWithX:x y:y andMaxLength:MAX_DEPTH];
+            Ray* ray = [[Ray alloc] initWithX:x y:y andZ:RAY_STARTING_POINT];
+            float nearestIntersectDistance = RAY_MAX_LENGTH;
             
-            // TODO: for each object in scene find any intersections with ray
-            for (Primitive* primitive in scene.primitives) {
-                if([primitive intersectsRay:ray]) {
-                    // TODO: get intersection point
+            for (id primitive in scene.primitives) {
+                float intersectDistance = [primitive findIntersectionsForRay:ray];
+                
+                if(intersectDistance < nearestIntersectDistance) {
+                    nearestIntersectDistance = intersectDistance;
+                    
+                    [image setColor:[primitive color] AtX:x y:y];
+                    /*
                     for (Light* light in scene.lights) {
                         // TODO: add light to summarized color if in direct light
                     }
+                    */
+                }
+                // No intersections, render default color
+                else {
+                    [image setColor:[NSColor colorWithRGBString:@"0,0,0"] AtX:x y:y];
                 }
             }
         }
@@ -49,11 +64,6 @@
     
     [image release];
     [scene release];
-}
-
-- (void)dealloc {
-    [_filename release];
-    [super dealloc];
 }
 
 @end

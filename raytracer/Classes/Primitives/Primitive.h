@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Ray.h"
 
-@interface Primitive : NSObject {
-    
+@interface Primitive : NSObject {   
 }
 
--(BOOL)intersectsRay:(Ray*)ray;
+-(float)findIntersectionsForRay:(Ray*)ray;
 
 @end

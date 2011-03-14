@@ -12,12 +12,16 @@
 @interface Sphere : Primitive {
 }
 
-@property int positionX;
-@property int positionY;
-@property int positionZ;
-@property int radius;
+@property float positionX;
+@property float positionY;
+@property float positionZ;
+@property float radius;
 @property (retain) NSColor* color;
 
-- (id)initWithX:(int)x y:(int)y z:(int)z radius:(int)r andColor:(NSColor*)c;
+- (id)initWithX:(float)x
+              y:(float)y
+              z:(float)z
+         radius:(float)r
+       andColor:(NSColor*)c;
 
 @end

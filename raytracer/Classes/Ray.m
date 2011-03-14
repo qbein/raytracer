@@ -8,21 +8,26 @@
 
 #import "Ray.h"
 
-
 @implementation Ray
 
 @synthesize originX;
 @synthesize originY;
-@synthesize length;
+@synthesize originZ;
 
--(id)initWithX:(int)x y:(int)y andMaxLength:(int)l {
+-(id)initWithX:(float)x
+             y:(float)y
+          andZ:(float)z {
     if(![super init]) return nil;
     
-    originX = x;
-    originY = y;
-    length = l;
+    self.originX = x;
+    self.originY = y;
+    self.originZ = z;
     
     return self;
+}
+
+- (void)dealloc {
+    [super dealloc];
 }
 
 @end

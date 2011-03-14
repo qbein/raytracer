@@ -9,7 +9,7 @@
 #import "Scene.h"
 
 @interface Scene (hidden)
-+(int)intValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict;
++(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict;
 @end
 
 @implementation Scene
@@ -17,15 +17,15 @@
 @synthesize lights;
 @synthesize primitives;
 
-+(int)intValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict {
-    return [[dict objectForKey:key] intValue];
++(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict {
+    return [[dict objectForKey:key] floatValue];
 }
 
 -(id)init {
     if(![super init]) return nil;
     
-    self.primitives = [[NSMutableArray alloc] init];
-    self.lights = [[NSMutableArray alloc] init];
+    self.primitives = [[[NSMutableArray alloc] init] autorelease];
+    self.lights = [[[NSMutableArray alloc] init] autorelease];
     
     return self;
 }
@@ -87,10 +87,10 @@
         }
         
         if(object) {
-            [[object initWithX:[Scene intValueForKey:@"x" inDictionary:obj]
-                             y:[Scene intValueForKey:@"y" inDictionary:obj]
-                             z:[Scene intValueForKey:@"z" inDictionary:obj]
-                        radius:[Scene intValueForKey:@"r" inDictionary:obj]
+            [[object initWithX:[Scene floatValueForKey:@"x" inDictionary:obj]
+                             y:[Scene floatValueForKey:@"y" inDictionary:obj]
+                             z:[Scene floatValueForKey:@"z" inDictionary:obj]
+                        radius:[Scene floatValueForKey:@"r" inDictionary:obj]
                       andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]] autorelease];
         }
     }];

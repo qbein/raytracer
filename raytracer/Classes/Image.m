@@ -11,7 +11,8 @@
 
 @implementation Image
 
--(id)initWithWidth:(int)width andHeight:(int)height {
+-(id)initWithWidth:(NSInteger)width
+         andHeight:(NSInteger)height {
     if(![super init]) return nil;
     
     imageRep = [[NSBitmapImageRep alloc]
@@ -29,6 +30,12 @@
     return self;
 }
 
+-(void)dealloc {
+    [pixels release];
+    [imageRep release];
+    [super dealloc];
+}
+
 -(void)setColor:(NSColor*)color
             AtX:(NSInteger)x
               y:(NSInteger)y {  
@@ -37,16 +44,6 @@
 
 -(void)writeImageToFile:(NSString*)fileName {
 	[[imageRep TIFFRepresentation] writeToFile:fileName atomically:YES];
-}
-
-- (void)dealloc {
-    [pixels release];
-    pixels = nil;
-    
-    [imageRep release];
-    imageRep = nil;
-    
-    [super dealloc];
 }
 
 @end

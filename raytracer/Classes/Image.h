@@ -15,8 +15,8 @@
     NSData* pixels;
 }
 
--(id)initWithWidth:(int)width
-         andHeight:(int)height;
+-(id)initWithWidth:(NSInteger)width
+         andHeight:(NSInteger)height;
 
 -(void)setColor:(NSColor*)color
             AtX:(NSInteger)x

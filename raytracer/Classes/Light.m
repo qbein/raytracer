@@ -16,7 +16,11 @@
 @synthesize radius;
 @synthesize color;
 
--(id)initWithX:(int)x y:(int)y z:(int)z radius:(int)r andColor:(NSColor*)c {
+-(id)initWithX:(float)x
+             y:(float)y
+             z:(float)z
+        radius:(float)r
+      andColor:(NSColor*)c {
     if(![super init]) return nil;
     
     self.positionX = x;
@@ -34,7 +38,7 @@
 }
 
 -(NSString*)description {
-    return [NSString stringWithFormat:@"%@ x:%i y:%i z:%i r:%i color:%@", [self class], self.positionX, self.positionY, self.positionZ, self.radius, self.color];
+    return [NSString stringWithFormat:@"%@ x:%f y:%f z:%f r:%f color:%@", [self class], self.positionX, self.positionY, self.positionZ, self.radius, self.color];
 }
 
 @end

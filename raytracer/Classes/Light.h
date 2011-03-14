@@ -12,12 +12,16 @@
 @interface Light : NSObject {
 }
 
-@property int positionX;
-@property int positionY;
-@property int positionZ;
-@property int radius;
+@property float positionX;
+@property float positionY;
+@property float positionZ;
+@property float radius;
 @property (retain) NSColor* color;
 
--(id)initWithX:(int)x y:(int)y z:(int)z radius:(int)radius andColor:(NSColor*)color;
+-(id)initWithX:(float)x
+             y:(float)y
+             z:(float)z
+        radius:(float)radius
+      andColor:(NSColor*)color;
 
 @end
