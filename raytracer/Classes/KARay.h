@@ -8,19 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "KAVector.h"
+#import "KAPoint.h"
 
 @interface KARay : NSObject
 
-@property float x;
-@property float y;
-@property float startZ;
-@property float direction;
+@property (retain) KAPoint* origin;
+@property (retain) KAVector* direction;
 
--(id)initWithX:(float)x
-             y:(float)y
-             z:(float)z
-  andDirection:(float)direction;
-
--(KAVector*)vectorRepresentation;
+-(id)initWithOrigin:(KAPoint*)anOrigin
+       andDirection:(KAVector*)aDirection;
 
 @end

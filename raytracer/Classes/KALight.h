@@ -8,19 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
+#import "KAPoint.h"
 
 @interface KALight : NSObject
 
-@property float positionX;
-@property float positionY;
-@property float positionZ;
+@property (retain) KAPoint* position;
 @property float radius;
 @property (retain) NSColor* color;
 
--(id)initWithX:(float)x
-             y:(float)y
-             z:(float)z
-        radius:(float)radius
-      andColor:(NSColor*)color;
+-(id)initWithPosition:(KAPoint*)aPosition
+               radius:(float)aRadius
+             andColor:(NSColor*)aColor;
 
 @end

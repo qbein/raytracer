@@ -29,14 +29,18 @@
     [super dealloc];
 }
 
-+(id)withX:(float)anX y:(float)aY andZ:(float)aZ {
++(id)pointWithX:(float)anX y:(float)aY andZ:(float)aZ {
     return [[[KAPoint alloc] initWithX:anX y:aY andZ:aZ] autorelease];
 }
 
 -(KAPoint*)addPoint:(KAPoint*)point {
-    return [KAPoint withX:(point.x + self.x)
+    return [KAPoint pointWithX:(point.x + self.x)
                       y:(point.y + self.y)
                    andZ:(point.z + self.z)];
+}
+
+-(NSString*)description {
+    return [NSString stringWithFormat:@"x:%f y:%f z:%f", self.x, self.y, self.z];
 }
 
 @end

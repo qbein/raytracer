@@ -11,7 +11,7 @@
 
 @implementation KAPrimitive
 
--(float)findIntersectionsForRay:(KARay*)ray {
+-(float)findIntersectionsForRay:(KARay*)ray withMaxDepth:(float)maxDepth {
     return NO;
 }
 

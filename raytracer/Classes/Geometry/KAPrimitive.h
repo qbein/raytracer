@@ -12,6 +12,7 @@
 @interface KAPrimitive : NSObject {   
 }
 
--(float)findIntersectionsForRay:(KARay*)ray;
+-(float)findIntersectionsForRay:(KARay*)ray
+                   withMaxDepth:(float)maxDepth;
 
 @end

@@ -36,11 +36,13 @@
     // TODO: Optimize with GCD block iterating?
     for(int y=0; y<_height; y++) {
         for(int x=0; x<_width; x++) {
-            KARay* ray = [[KARay alloc] initWithX:x y:y z:RAY_STARTING_POINT andDirection:RAY_MAX_LENGTH];
+            KARay* ray = [[KARay alloc] initWithOrigin:[KAPoint pointWithX:x y:y andZ:RAY_STARTING_POINT]
+                                          andDirection:[KAVector vectorFromPoint:[KAPoint pointWithX:0 y:0 andZ:1.0f]]];
+            
             float nearestIntersectDistance = RAY_MAX_LENGTH;
             
             for (id primitive in scene.primitives) {
-                float intersectDistance = [primitive findIntersectionsForRay:ray];
+                float intersectDistance = [primitive findIntersectionsForRay:ray withMaxDepth:RAY_MAX_LENGTH];
                 
                 if(intersectDistance < nearestIntersectDistance) {
                     nearestIntersectDistance = intersectDistance;

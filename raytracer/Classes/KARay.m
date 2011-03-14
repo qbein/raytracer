@@ -10,32 +10,23 @@
 
 @implementation KARay
 
-@synthesize x;
-@synthesize y;
-@synthesize startZ;
+@synthesize origin;
 @synthesize direction;
 
--(id)initWithX:(float)anX
-             y:(float)aY
-             z:(float)aZ
-  andDirection:(float)aDirection {
+-(id)initWithOrigin:(KAPoint*)anOrigin
+       andDirection:(KAVector*)aDirection {
     if(![super init]) return nil;
     
-    self.x = anX;
-    self.y = aY;
-    self.startZ = aZ;
+    self.origin = anOrigin;
     self.direction = aDirection;
     
     return self;
 }
 
 - (void)dealloc {
+    [origin release];
+    [direction release];
     [super dealloc];
-}
-
--(KAVector*)vectorRepresentation {
-    KAVector* vector = [[KAVector alloc] initWithX:self.x y:self.y andZ:self.startZ];
-    return [vector autorelease];
 }
 
 @end

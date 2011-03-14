@@ -14,7 +14,7 @@
 @property float y;
 @property float z;
 
-+(id)withX:(float)anX y:(float)aY andZ:(float)aZ;
++(id)pointWithX:(float)anX y:(float)aY andZ:(float)aZ;
 
 -(KAPoint*)addPoint:(KAPoint*)point;
 

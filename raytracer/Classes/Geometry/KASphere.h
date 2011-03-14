@@ -8,19 +8,16 @@
 
 #import <AppKit/AppKit.h>
 #import "KAPrimitive.h"
+#import "KAPoint.h"
 
 @interface KASphere : KAPrimitive
 
-@property float positionX;
-@property float positionY;
-@property float positionZ;
+@property (retain) KAPoint* position;
 @property float radius;
 @property (retain) NSColor* color;
 
-- (id)initWithX:(float)x
-              y:(float)y
-              z:(float)z
-         radius:(float)r
-       andColor:(NSColor*)c;
+-(id)initWithPosition:(KAPoint*)aPosition
+         radius:(float)aRadius
+       andColor:(NSColor*)aColor;
 
 @end

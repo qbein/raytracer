@@ -87,11 +87,11 @@
         }
         
         if(object) {
-            [[object initWithX:[KAScene floatValueForKey:@"x" inDictionary:obj]
-                             y:[KAScene floatValueForKey:@"y" inDictionary:obj]
-                             z:[KAScene floatValueForKey:@"z" inDictionary:obj]
-                        radius:[KAScene floatValueForKey:@"r" inDictionary:obj]
-                      andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]] autorelease];
+            [object initWithPosition:[KAPoint pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj] 
+                                                      y:[KAScene floatValueForKey:@"y" inDictionary:obj]
+                                                   andZ:[KAScene floatValueForKey:@"y" inDictionary:obj]]
+                              radius:[KAScene floatValueForKey:@"r" inDictionary:obj]
+                            andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]];
         }
     }];
     
