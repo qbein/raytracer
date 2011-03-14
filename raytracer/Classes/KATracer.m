@@ -40,25 +40,35 @@
                                           andDirection:[KAVector vectorFromPoint:[KAPoint pointWithX:0 y:0 andZ:1.0f]]];
             
             float nearestIntersectDistance = RAY_MAX_LENGTH;
+            id currentPrimitive = nil;
             
+            // Find the closest intersecting primitive
             for (id primitive in scene.primitives) {
-                float intersectDistance = [primitive findIntersectionsForRay:ray withMaxDepth:RAY_MAX_LENGTH];
+                float intersectDistance = [primitive findIntersectionsForRay:ray
+                                                                withMaxDepth:nearestIntersectDistance];
                 
                 if(intersectDistance < nearestIntersectDistance) {
                     nearestIntersectDistance = intersectDistance;
-                    
-                    [image setColor:[primitive color] AtX:x y:y];
-                    /*
-                    for (Light* light in scene.lights) {
-                        // TODO: add light to summarized color if in direct light
-                    }
-                    */
-                }
-                // No intersections, render default color
-                else {
-                    [image setColor:[NSColor colorWithRGBString:@"0,0,0"] AtX:x y:y];
+                    currentPrimitive = primitive;
                 }
             }
+            
+            // No intersecting primitive found, skip to next pixel
+            if(!currentPrimitive) {
+                [image setColor:[NSColor colorWithRGBString:@"0,0,0"] AtX:x y:y];
+                continue;
+            }
+            
+            // For simplicity we set the pixel color to the color of the
+            // intersecting primitive
+            [image setColor:[currentPrimitive color] AtX:x y:y];
+            
+            /*
+            // TODO: add light to summarized color if in direct light
+            for (Light* light in scene.lights) {
+                
+            }
+            */
         }
     }
         
