@@ -7,7 +7,7 @@
 //
 
 #import "KAPoint.h"
-
+#import "KAVector.h"
 
 @implementation KAPoint
 

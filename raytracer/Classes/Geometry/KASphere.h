@@ -8,7 +8,8 @@
 
 #import <AppKit/AppKit.h>
 #import "KAPrimitive.h"
-#import "KAPoint.h"
+
+@class KAPoint;
 
 @interface KASphere : KAPrimitive
 

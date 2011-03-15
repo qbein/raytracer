@@ -6,7 +6,9 @@
 //  Copyright 2011 aadnoy.com. All rights reserved.
 //
 
-#import "KAPoint.h"
+#import <Foundation/Foundation.h>
+
+@class KAPoint;
 
 @interface KAVector : NSObject
 

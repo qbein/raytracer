@@ -8,8 +8,6 @@
 
 #import "Vendor/JSON/JSON.h"
 #import "Categories/NSColor+RGBString.h"
-#import "Geometry/KASphere.h"
-#import "KALight.h"
 
 @interface KAScene : NSObject
 

@@ -6,7 +6,7 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import "KARay.h"
+@class KARay;
 
 @interface KAPrimitive : NSObject {   
 }

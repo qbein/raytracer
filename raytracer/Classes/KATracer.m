@@ -6,7 +6,15 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
+#import <AppKit/AppKit.h>
 #import "KATracer.h"
+#import "KARay.h"
+#import "KAScene.h"
+#import "KAImage.h"
+#import "KALight.h"
+#import "KAPrimitive.h"
+#import "KAVector.h"
+#import "KASphere.h"
 
 @implementation KATracer
 

@@ -7,9 +7,8 @@
 //
 
 #import <AppKit/AppKit.h>
-#import "KAScene.h"
-#import "KAImage.h"
-#import "KARay.h"
+
+@class KAScene;
 
 #define RAY_STARTING_POINT -1000
 #define RAY_MAX_LENGTH 99999

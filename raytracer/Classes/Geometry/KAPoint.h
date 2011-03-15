@@ -6,6 +6,8 @@
 //  Copyright 2011 aadnoy.com. All rights reserved.
 //
 
+@class KAVector;
+
 @interface KAPoint : NSObject
 
 @property float x;

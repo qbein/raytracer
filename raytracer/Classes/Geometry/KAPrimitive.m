@@ -7,7 +7,7 @@
 //
 
 #import "KAPrimitive.h"
-
+#import "KARay.h"
 
 @implementation KAPrimitive
 

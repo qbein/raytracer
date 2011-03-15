@@ -7,7 +7,8 @@
 //
 
 #import "KASphere.h"
-
+#import "KAPoint.h"
+#import "KARay.h"
 
 @implementation KASphere
 

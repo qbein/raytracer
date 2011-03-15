@@ -7,6 +7,8 @@
 //
 
 #import "KAScene.h"
+#import "Geometry/KASphere.h"
+#import "KALight.h"
 
 @interface KAScene (hidden)
 +(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict;
