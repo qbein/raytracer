@@ -39,6 +39,12 @@
                    andZ:(point.z + self.z)];
 }
 
+-(KAPoint*)addVector:(KAVector*)aVector {
+    return [KAPoint pointWithX:(self.x + aVector.x)
+                             y:(self.y + aVector.y)
+                          andZ:(self.z + aVector.z)];
+}
+
 -(NSString*)description {
     return [NSString stringWithFormat:@"x:%f y:%f z:%f", self.x, self.y, self.z];
 }

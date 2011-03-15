@@ -9,10 +9,15 @@
 #import "Vendor/JSON/JSON.h"
 #import "Categories/NSColor+RGBString.h"
 
+#define VERSION "1.0-alpha"
+
 @interface KAScene : NSObject
 
 @property (retain) NSMutableArray* lights;
 @property (retain) NSMutableArray* primitives;
+@property int width;
+@property int height;
+@property (retain) NSString* version;
 
 -(id)initFromFile:(NSString*)filename;
 

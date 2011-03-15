@@ -18,6 +18,9 @@
 
 @synthesize lights;
 @synthesize primitives;
+@synthesize width;
+@synthesize height;
+@synthesize version;
 
 +(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict {
     return [[dict objectForKey:key] floatValue];
@@ -34,6 +37,8 @@
 
 -(id)initFromFile:(NSString *)filename {
     if(![self init]) return nil;
+    
+    NSLog(@"Parsing scene file %@", filename);
     
     // TODO: when encountering an error in init, is it best practice to simply return nil as done below?
     
@@ -64,15 +69,24 @@
         return nil;
     }
     
-    NSLog(@"%ld object(s) in scene", [scene count]);
+    NSLog(@"%ld object(s) in scene", [[scene objectForKey:@"objects"] count]);
     
-    if([scene count] == 0) {
+    if([[scene objectForKey:@"objects"] count] == 0) {
         NSLog(@"No objects in scene (JSON parse error?)");
         return nil;
     }
     
+    self.version = [scene objectForKey:@"version"];
+    
+    if(![self.version isEqualToString:[NSString stringWithUTF8String:VERSION]]) {
+        NSLog(@"Scene file could be incompatible with this raytracer version (scene v. %@, renderer v. %@)", self.version, [NSString stringWithUTF8String:VERSION]);
+    }
+    
+    self.width = [[scene objectForKey:@"width"] intValue];
+    self.height = [[scene objectForKey:@"height"] intValue];
+    
     BOOL* invalidObject = NO;
-    [scene enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    [[scene objectForKey:@"objects"] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         id object = nil;
  
         if([key isEqualToString:@"light"]) {

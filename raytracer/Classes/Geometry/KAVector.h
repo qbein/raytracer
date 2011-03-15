@@ -22,10 +22,14 @@
 
 +(id)vectorFromPoint:(KAPoint*)pointA substractedBy:(KAPoint*)pointB;
 
++(id)vectorFromPoint:(KAPoint*)pointA addedBy:(KAPoint*)pointB;
+
 -(KAVector*)add:(KAVector*)aVector;
 
 -(KAVector*)multiplyWith:(KAVector*)aVector;
 
--(float)sumarize;
+-(KAVector*)multiplyWithFloat:(float)aFloat;
+
+-(float)summarize;
 
 @end

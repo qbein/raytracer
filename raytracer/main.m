@@ -6,11 +6,19 @@
 //  Inspired by:
 //  http://www.codermind.com/articles/Raytracer-in-C++-Introduction-What-is-ray-tracing.html
 //
+//  Math:
+//  http://programmedlessons.org/VectorLessons/vectorIndex.html
+//  http://www.cs.umbc.edu/~olano/435f02/ray-sphere.html
+//  http://paulbourke.net/geometry/sphereline/
+//  http://wiki.cgsociety.org/index.php/Ray_Sphere_Intersection
+//  http://www.ccs.neu.edu/home/fell/CSU540/programs/RayTracingFormulas.htm
+// 
 //  Created by Kurt Aadnøy on 10.03.11.
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
 #import "Classes/KATracer.h"
+#import "KAScene.h"
 
 int main (int argc, const char * argv[])
 {
@@ -44,10 +52,8 @@ int main (int argc, const char * argv[])
         return 1;
     }
     
-    NSLog(@"Rendering scene [{%@}] to: %@", sceneFile, outputFile);
-    
     // Provided output file and scene file is valid, render the scene
-    KATracer *tracer = [[KATracer alloc] initWithWidth:300 height:200 andOutputFile:outputFile];
+    KATracer *tracer = [[KATracer alloc] initWithOutputFile:outputFile];
     
     KAScene *scene = [[KAScene alloc] initFromFile:sceneFile];
     

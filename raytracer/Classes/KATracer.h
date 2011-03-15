@@ -13,14 +13,11 @@
 #define RAY_STARTING_POINT -1000
 #define RAY_MAX_LENGTH 99999
 
-@interface KATracer : NSObject {
-    int _width, _height;    
-    NSString* _filename;
-}
+@interface KATracer : NSObject
 
--(id)initWithWidth:(int)width
-            height:(int)height
-     andOutputFile:(NSString*)filename;
+@property (retain) NSString* filename;
+
+-(id)initWithOutputFile:(NSString*)aFilename;
 
 -(void)renderScene:(KAScene*)scene;
 

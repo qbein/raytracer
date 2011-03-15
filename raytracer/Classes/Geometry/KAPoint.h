@@ -18,4 +18,6 @@
 
 -(KAPoint*)addPoint:(KAPoint*)point;
 
+-(KAPoint*)addVector:(KAVector*)aVector;
+
 @end

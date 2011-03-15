@@ -34,15 +34,17 @@
     [super dealloc];
 }
 
--(float)findIntersectionsForRay:(KARay *)ray withMaxDepth:(float)maxDepth {
+-(float)findIntersectionsForRay:(KARay *)ray
+                   withMaxDepth:(float)maxDepth {
     float intersectionDistance = maxDepth;
     
+    // Find the distance vector between the sphere center and the ray origin
     KAVector* distance = [KAVector vectorFromPoint:self.position substractedBy:ray.origin];
     
     [distance retain];
     
-    double B = [[distance multiplyWith:ray.direction] sumarize];   
-    double D = B*B - [[distance multiplyWith:distance] sumarize] + self.radius * self.radius;
+    double B = [[distance multiplyWith:ray.direction] summarize];
+    double D = B*B - [[distance multiplyWith:distance] summarize] + self.radius * self.radius;
     
     [distance release];
     

@@ -29,4 +29,8 @@
     [super dealloc];
 }
 
+-(NSString*)description {
+    return [NSString stringWithFormat:@"origin %@ - direction %@", self.origin, self.direction];
+}
+
 @end
