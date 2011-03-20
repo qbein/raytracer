@@ -1,7 +1,7 @@
 Raytracer
 =========
 
-This is a personal research project in raytracing. I'm using this project to
+This is a personal ray tracing research project. I'm using this project to
 learn about ray tracing and Objective C.
 
 Inspired by

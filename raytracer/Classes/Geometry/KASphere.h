@@ -6,19 +6,19 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import <AppKit/AppKit.h>
 #import "KAPrimitive.h"
 
-@class KAPoint;
+@class KAPoint3d;
+@class KAMaterial;
 
 @interface KASphere : KAPrimitive
 
-@property (retain) KAPoint* position;
+@property (retain) KAPoint3d* position;
 @property float radius;
-@property (retain) NSColor* color;
+@property (retain) KAMaterial* material;
 
--(id)initWithPosition:(KAPoint*)aPosition
+-(id)initWithPosition:(KAPoint3d*)aPosition
          radius:(float)aRadius
-       andColor:(NSColor*)aColor;
+       andMaterial:(KAMaterial*)aMaterial;
 
 @end

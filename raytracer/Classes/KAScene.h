@@ -15,6 +15,7 @@
 
 @property (retain) NSMutableArray* lights;
 @property (retain) NSMutableArray* primitives;
+@property (retain) NSMutableDictionary* materials;
 @property int width;
 @property int height;
 @property (retain) NSString* version;

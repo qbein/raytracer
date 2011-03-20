@@ -1,29 +1,57 @@
 {
     "version": "1.0-alpha",
-    "width": "200",
-    "height": "200",
+    "width": "640",
+    "height": "480",
     
-    "objects": {
-        "light": {
-            "x": "20",
-            "y": "20",
-            "z": "20",
-            "r": "10",
-            "color": "255,255,255"
+    "materials": {
+        "material1": {
+            "diffuse": "255,255,0",
+            "reflection": "0.5"
         },
-        "light": {
-            "x": "20",
-            "y": "20",
-            "z": "20",
-            "r": "10",
-            "color": "255,255,255"
+        "material2": {
+            "diffuse": "0,255,255",
+            "reflection": "0.5"
         },
-        "sphere": {
-            "x": "100",
-            "y": "100",
-            "z": "500",
-            "r": "75",
-            "color": "255,0,255"
+        "material3": {
+            "diffuse": "255,0,255",
+            "reflection": "0.5"
         }
-    }
+    },
+    
+    "objects": [
+        {
+            "type": "light",
+            "x": "0",
+            "y": "240",
+            "z": "-100",
+            "color": "255,255,255"
+        }, {
+            "type": "light",
+            "x": "640",
+            "y": "240",
+            "z": "-1000",
+            "color": "153,179,255"
+        }, {
+            "type": "sphere",
+            "material": "material1",
+            "x": "233",
+            "y": "290",
+            "z": "0",
+            "r": "100"
+        }, {
+            "type": "sphere",
+            "material": "material2",
+            "x": "407",
+            "y": "290",
+            "z": "0",
+            "r": "100"
+        }, {
+            "type": "sphere",
+            "material": "material3",
+            "x": "320",
+            "y": "140",
+            "z": "0",
+            "r": "100"
+        }
+    ]
 }

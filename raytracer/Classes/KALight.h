@@ -7,16 +7,14 @@
 //
 
 #import <AppKit/AppKit.h>
-#import "KAPoint.h"
+#import "KAPoint3d.h"
 
 @interface KALight : NSObject
 
-@property (retain) KAPoint* position;
-@property float radius;
+@property (retain) KAPoint3d* position;
 @property (retain) NSColor* color;
 
--(id)initWithPosition:(KAPoint*)aPosition
-               radius:(float)aRadius
+-(id)initWithPosition:(KAPoint3d*)aPosition
              andColor:(NSColor*)aColor;
 
 @end

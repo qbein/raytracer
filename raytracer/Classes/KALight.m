@@ -11,16 +11,13 @@
 @implementation KALight
 
 @synthesize position;
-@synthesize radius;
 @synthesize color;
 
--(id)initWithPosition:(KAPoint*)aPosition
-               radius:(float)aRadius
+-(id)initWithPosition:(KAPoint3d*)aPosition
              andColor:(NSColor*)aColor {
     if(![super init]) return nil;
     
     self.position = aPosition;
-    self.radius = aRadius;
     self.color = aColor;
     
     return self;
@@ -32,7 +29,7 @@
 }
 
 -(NSString*)description {
-    return [NSString stringWithFormat:@"%@ position %@ radius %f color:%@", [self class], self.position, self.radius, self.color];
+    return [NSString stringWithFormat:@"<%@ position %@ color:%@>", [self class], self.position, self.color];
 }
 
 @end

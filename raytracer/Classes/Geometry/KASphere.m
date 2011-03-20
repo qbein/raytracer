@@ -1,4 +1,4 @@
-//
+ //
 //  Sphere.m
 //  raytracer
 //
@@ -7,30 +7,31 @@
 //
 
 #import "KASphere.h"
-#import "KAPoint.h"
+#import "KAPoint3d.h"
 #import "KARay.h"
+#import "KAMaterial.h"
 
 @implementation KASphere
 
 @synthesize position;
 @synthesize radius;
-@synthesize color;
+@synthesize material;
 
--(id)initWithPosition:(KAPoint*)aPosition
+-(id)initWithPosition:(KAPoint3d*)aPosition
                radius:(float)aRadius
-             andColor:(NSColor*)aColor {
+             andMaterial:(KAMaterial*)aMaterial {
     if(![super init]) return nil;
     
     self.position = aPosition;
     self.radius = aRadius;
-    self.color = aColor;
+    self.material = aMaterial;
     
     return self;
 }
 
 - (void)dealloc {
     [position dealloc];
-    [color dealloc];
+    [material dealloc];
     [super dealloc];
 }
 
@@ -39,14 +40,11 @@
     float intersectionDistance = maxDepth;
     
     // Find the distance vector between the sphere center and the ray origin
-    KAVector* distance = [KAVector vectorFromPoint:self.position substractedBy:ray.origin];
-    
-    [distance retain];
-    
-    double B = [[distance multiplyWith:ray.direction] summarize];
-    double D = B*B - [[distance multiplyWith:distance] summarize] + self.radius * self.radius;
-    
-    [distance release];
+    KAVector3d* distance = [KAVector3d vectorFromPoint:self.position
+                                    substractedByPoint:ray.origin];
+        
+    double B = [[distance multiplyByVector:ray.direction] dot];
+    double D = B * B - [[distance multiplyByVector:distance] dot] + self.radius * self.radius;
     
     if(D < 0.0f) {
         return maxDepth;
@@ -66,7 +64,7 @@
 }
 
 -(NSString*)description {
-    return [NSString stringWithFormat:@"%@ position %@ radius %f color %@", [self class], self.position, self.radius, self.color];
+    return [NSString stringWithFormat:@"%@ position %@ radius %f material %@", [self class], self.position, self.radius, self.material];
 }
 
 @end

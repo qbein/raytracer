@@ -13,8 +13,8 @@
 @synthesize origin;
 @synthesize direction;
 
--(id)initWithOrigin:(KAPoint*)anOrigin
-       andDirection:(KAVector*)aDirection {
+-(id)initWithOrigin:(KAPoint3d*)anOrigin
+       andDirection:(KAVector3d*)aDirection {
     if(![super init]) return nil;
     
     self.origin = anOrigin;

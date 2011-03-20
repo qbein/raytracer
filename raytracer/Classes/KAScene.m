@@ -9,6 +9,7 @@
 #import "KAScene.h"
 #import "Geometry/KASphere.h"
 #import "KALight.h"
+#import "KAMaterial.h"
 
 @interface KAScene (hidden)
 +(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict;
@@ -18,6 +19,7 @@
 
 @synthesize lights;
 @synthesize primitives;
+@synthesize materials;
 @synthesize width;
 @synthesize height;
 @synthesize version;
@@ -31,6 +33,7 @@
     
     self.primitives = [[[NSMutableArray alloc] init] autorelease];
     self.lights = [[[NSMutableArray alloc] init] autorelease];
+    self.materials = [[[NSMutableDictionary alloc] init] autorelease];
     
     return self;
 }
@@ -85,29 +88,41 @@
     self.width = [[scene objectForKey:@"width"] intValue];
     self.height = [[scene objectForKey:@"height"] intValue];
     
+    [[scene objectForKey:@"materials"] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        KAMaterial* material = [[KAMaterial alloc] initWithRGBString:[obj objectForKey:@"diffuse"]
+                                                        andReflection:[[obj objectForKey:@"reflection"] floatValue]];
+        [self.materials setValue:[material autorelease] forKey:key];
+    }];
+    
+    NSArray* objects = [scene objectForKey:@"objects"];
     BOOL* invalidObject = NO;
-    [[scene objectForKey:@"objects"] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        id object = nil;
- 
-        if([key isEqualToString:@"light"]) {
-            object = [KALight alloc];
-            [self.lights addObject:object];
+    [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString* type = [obj objectForKey:@"type"];
+        
+        if([type isEqualToString:@"light"]) {
+            KALight* light = [KALight alloc];
+            
+            [light initWithPosition:[KAPoint3d pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj] 
+                                                       y:[KAScene floatValueForKey:@"y" inDictionary:obj]
+                                                    andZ:[KAScene floatValueForKey:@"z" inDictionary:obj]]
+                            andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]];
+            
+            [self.lights addObject:[light autorelease]];
         }
-        else if([key isEqualToString:@"sphere"]) {
-            object = [KASphere alloc];
-            [self.primitives addObject:object];
+        else if([type isEqualToString:@"sphere"]) {
+            KASphere* sphere = [KASphere alloc];
+            
+            [sphere initWithPosition:[KAPoint3d pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj] 
+                                                       y:[KAScene floatValueForKey:@"y" inDictionary:obj]
+                                                    andZ:[KAScene floatValueForKey:@"z" inDictionary:obj]]
+                              radius:[KAScene floatValueForKey:@"r" inDictionary:obj]
+                         andMaterial:[materials objectForKey:[obj objectForKey:@"material"]]];
+            
+            [self.primitives addObject:[sphere autorelease]];
         }
         else {
-            NSLog(@"Unknown object: %@", key);
+            NSLog(@"Unknown object: %@", type);
             *stop = YES;
-        }
-        
-        if(object) {
-            [object initWithPosition:[KAPoint pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj] 
-                                                      y:[KAScene floatValueForKey:@"y" inDictionary:obj]
-                                                   andZ:[KAScene floatValueForKey:@"y" inDictionary:obj]]
-                              radius:[KAScene floatValueForKey:@"r" inDictionary:obj]
-                            andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]];
         }
     }];
     

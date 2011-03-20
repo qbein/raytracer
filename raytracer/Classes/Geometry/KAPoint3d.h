@@ -6,9 +6,9 @@
 //  Copyright 2011 aadnoy.com. All rights reserved.
 //
 
-@class KAVector;
+@class KAVector3d;
 
-@interface KAPoint : NSObject
+@interface KAPoint3d : NSObject <NSCopying>
 
 @property float x;
 @property float y;
@@ -16,8 +16,8 @@
 
 +(id)pointWithX:(float)anX y:(float)aY andZ:(float)aZ;
 
--(KAPoint*)addPoint:(KAPoint*)point;
+-(KAPoint3d*)addPoint:(KAPoint3d*)point;
 
--(KAPoint*)addVector:(KAVector*)aVector;
+-(KAPoint3d*)addVector:(KAVector3d*)aVector;
 
 @end
