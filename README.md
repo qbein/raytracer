@@ -8,10 +8,11 @@ Inspired by
 -----------
 http://www.codermind.com/articles/Raytracer-in-C++-Introduction-What-is-ray-tracing.html
 
-Ray tracing math
-----------------
+Math
+----
 http://programmedlessons.org/VectorLessons/vectorIndex.html
 http://www.cs.umbc.edu/~olano/435f02/ray-sphere.html
 http://paulbourke.net/geometry/sphereline/
 http://wiki.cgsociety.org/index.php/Ray_Sphere_Intersection
 http://www.ccs.neu.edu/home/fell/CSU540/programs/RayTracingFormulas.htm
+http://www.fundza.com/vectors/normalize/index.html

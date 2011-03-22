@@ -25,6 +25,14 @@
     return self;
 }
 
++(id)vectorWithX:(float)ax
+               y:(float)ay
+            andZ:(float)az {
+    return [[[KAVector3d alloc] initWithX:ax
+                                        y:ay
+                                     andZ:az] autorelease];
+}
+
 +(id)vectorFromPoint:(KAPoint3d*)aPoint {
     return [[[KAVector3d alloc] initWithX:aPoint.x
                                         y:aPoint.y
@@ -125,6 +133,10 @@
     return v;
 }
 
+-(float)dotProduct:(KAVector3d*)anotherVector {
+    return [[self multiplyByVector:anotherVector] dot];
+}
+
 -(float)dot {
     return self.x + self.y + self.z;
 }
@@ -134,9 +146,7 @@
 }
 
 -(KAVector3d*)normalizedVector {
-    KAVector3d* n = [self copy];
-    
-    return [n divideByFloat:[n length]];
+    return [self divideByFloat:[self length]];
 }
 
 -(NSString*)description {

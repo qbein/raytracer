@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		45052B5C1335870800A59410 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D7299B13357F39003E2EA5 /* Cocoa.framework */; };
-		45052B621335870800A59410 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45052B601335870800A59410 /* InfoPlist.strings */; };
-		450D4749133536D800D6A651 /* KAMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 450D4748133536D700D6A651 /* KAMaterial.m */; };
 		4538845D13296AA3002A4196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4538845C13296AA3002A4196 /* Foundation.framework */; };
 		4538846013296AA3002A4196 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538845F13296AA3002A4196 /* main.m */; };
 		4538847413296EA4002A4196 /* KAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4538847113296EA4002A4196 /* KAScene.m */; };
@@ -32,22 +30,17 @@
 		453884E8132EBB2C002A4196 /* KAPoint3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E7132EBB2C002A4196 /* KAPoint3d.m */; };
 		453884EA132EBE10002A4196 /* KASphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E9132EBE0F002A4196 /* KASphere.m */; };
 		453884ED132ED530002A4196 /* KAVector3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884EC132ED52E002A4196 /* KAVector3d.m */; };
+		4567EFED133936A600948C4A /* KAVector3dTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567EFEA133935A700948C4A /* KAVector3dTest.m */; };
+		4567EFF11339476800948C4A /* KAMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567EFF01339476800948C4A /* KAMaterial.m */; };
+		4567EFF21339477D00948C4A /* KAMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567EFF01339476800948C4A /* KAMaterial.m */; };
 		45EE66DC1335873A00F7C0EF /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EE66DB1335873A00F7C0EF /* GHUnit.framework */; };
 		45EE66E4133588F900F7C0EF /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE66E2133588EE00F7C0EF /* GHUnitTestMain.m */; };
-		45EE66EF13358A9800F7C0EF /* SphereTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE66EE13358A9800F7C0EF /* SphereTest.m */; };
-		45EE66F013358C7700F7C0EF /* KAPrimitive.h in Sources */ = {isa = PBXBuildFile; fileRef = 453884E0132EBB0B002A4196 /* KAPrimitive.h */; };
+		45EE66EF13358A9800F7C0EF /* KASphereTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE66EE13358A9800F7C0EF /* KASphereTest.m */; };
 		45EE66F113358C7700F7C0EF /* KAPrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E1132EBB0B002A4196 /* KAPrimitive.m */; };
-		45EE66F213358C7700F7C0EF /* KASphere.h in Sources */ = {isa = PBXBuildFile; fileRef = 453884E2132EBB0B002A4196 /* KASphere.h */; };
 		45EE66F313358C7700F7C0EF /* KASphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E9132EBE0F002A4196 /* KASphere.m */; };
-		45EE66F413358C7700F7C0EF /* KAPoint3d.h in Sources */ = {isa = PBXBuildFile; fileRef = 453884E6132EBB2C002A4196 /* KAPoint3d.h */; };
 		45EE66F513358C7700F7C0EF /* KAPoint3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E7132EBB2C002A4196 /* KAPoint3d.m */; };
-		45EE66F613358C7700F7C0EF /* KAVector3d.h in Sources */ = {isa = PBXBuildFile; fileRef = 453884EB132ED52D002A4196 /* KAVector3d.h */; };
 		45EE66F713358C7700F7C0EF /* KAVector3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884EC132ED52E002A4196 /* KAVector3d.m */; };
-		45EE66F813358C7700F7C0EF /* KARay.h in Sources */ = {isa = PBXBuildFile; fileRef = 45388484132B7D21002A4196 /* KARay.h */; };
 		45EE66F913358C7700F7C0EF /* KARay.m in Sources */ = {isa = PBXBuildFile; fileRef = 45388485132B7D22002A4196 /* KARay.m */; };
-		45EE66FA13358C7700F7C0EF /* KAMaterial.h in Sources */ = {isa = PBXBuildFile; fileRef = 450D4747133536D500D6A651 /* KAMaterial.h */; };
-		45EE66FB13358C7700F7C0EF /* KAMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 450D4748133536D700D6A651 /* KAMaterial.m */; };
-		45EE66FC13358D1600F7C0EF /* NSColor+RGBString.h in Sources */ = {isa = PBXBuildFile; fileRef = 453884D3132D706A002A4196 /* NSColor+RGBString.h */; };
 		45EE66FD13358D1600F7C0EF /* NSColor+RGBString.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884D4132D706A002A4196 /* NSColor+RGBString.m */; };
 /* End PBXBuildFile section */
 
@@ -76,16 +69,12 @@
 /* Begin PBXFileReference section */
 		45052B5A1335870800A59410 /* tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45052B5F1335870800A59410 /* tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tests-Info.plist"; sourceTree = "<group>"; };
-		45052B611335870800A59410 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45052B631335870800A59410 /* tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tests-Prefix.pch"; sourceTree = "<group>"; };
-		450D4747133536D500D6A651 /* KAMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAMaterial.h; sourceTree = "<group>"; };
-		450D4748133536D700D6A651 /* KAMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAMaterial.m; sourceTree = "<group>"; };
 		450D474C1335594D00D6A651 /* scene2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = scene2.json; path = "Supporting Files/scene2.json"; sourceTree = "<group>"; };
 		4538845813296AA3002A4196 /* raytracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		4538845C13296AA3002A4196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4538845F13296AA3002A4196 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4538846213296AA3002A4196 /* raytracer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "raytracer-Prefix.pch"; sourceTree = "<group>"; };
-		4538846313296AA3002A4196 /* raytracer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = raytracer.1; sourceTree = "<group>"; };
 		4538847013296EA4002A4196 /* KAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KAScene.h; path = Classes/KAScene.h; sourceTree = "<group>"; };
 		4538847113296EA4002A4196 /* KAScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAScene.m; path = Classes/KAScene.m; sourceTree = "<group>"; };
 		4538847213296EA4002A4196 /* KATracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KATracer.h; path = Classes/KATracer.h; sourceTree = "<group>"; };
@@ -127,13 +116,17 @@
 		453884E9132EBE0F002A4196 /* KASphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASphere.m; sourceTree = "<group>"; };
 		453884EB132ED52D002A4196 /* KAVector3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAVector3d.h; sourceTree = "<group>"; };
 		453884EC132ED52E002A4196 /* KAVector3d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAVector3d.m; sourceTree = "<group>"; };
+		4567EFEA133935A700948C4A /* KAVector3dTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAVector3dTest.m; path = Tests/KAVector3dTest.m; sourceTree = "<group>"; };
+		4567EFEF1339476800948C4A /* KAMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KAMaterial.h; path = Classes/KAMaterial.h; sourceTree = "<group>"; };
+		4567EFF01339476800948C4A /* KAMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAMaterial.m; path = Classes/KAMaterial.m; sourceTree = "<group>"; };
 		45D7299B13357F39003E2EA5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45D7299E13357F39003E2EA5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		45D7299F13357F39003E2EA5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		45D729A013357F39003E2EA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45EE66DB1335873A00F7C0EF /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		45EE66E2133588EE00F7C0EF /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitTestMain.m; sourceTree = "<group>"; };
-		45EE66EE13358A9800F7C0EF /* SphereTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SphereTest.m; path = Tests/SphereTest.m; sourceTree = "<group>"; };
+		45EE66EE13358A9800F7C0EF /* KASphereTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KASphereTest.m; path = Tests/KASphereTest.m; sourceTree = "<group>"; };
+		45EE67001338FA5A00F7C0EF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +163,9 @@
 		45052B5E1335870800A59410 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				45EE67001338FA5A00F7C0EF /* README.md */,
 				45EE66E2133588EE00F7C0EF /* GHUnitTestMain.m */,
 				45052B5F1335870800A59410 /* tests-Info.plist */,
-				45052B601335870800A59410 /* InfoPlist.strings */,
 				45052B631335870800A59410 /* tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -214,7 +207,6 @@
 			children = (
 				4538846913296AB3002A4196 /* Classes */,
 				4538845F13296AA3002A4196 /* main.m */,
-				4538846313296AA3002A4196 /* raytracer.1 */,
 				4538846113296AA3002A4196 /* Supporting Files */,
 			);
 			path = raytracer;
@@ -246,8 +238,8 @@
 				4538847713297204002A4196 /* KAImage.m */,
 				45388484132B7D21002A4196 /* KARay.h */,
 				45388485132B7D22002A4196 /* KARay.m */,
-				450D4747133536D500D6A651 /* KAMaterial.h */,
-				450D4748133536D700D6A651 /* KAMaterial.m */,
+				4567EFEF1339476800948C4A /* KAMaterial.h */,
+				4567EFF01339476800948C4A /* KAMaterial.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -325,7 +317,8 @@
 		45EE66E51335890400F7C0EF /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				45EE66EE13358A9800F7C0EF /* SphereTest.m */,
+				45EE66EE13358A9800F7C0EF /* KASphereTest.m */,
+				4567EFEA133935A700948C4A /* KAVector3dTest.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -340,6 +333,7 @@
 				45052B561335870800A59410 /* Sources */,
 				45052B571335870800A59410 /* Frameworks */,
 				45052B581335870800A59410 /* Resources */,
+				45EE66FE13361C0C00F7C0EF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -399,33 +393,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45052B621335870800A59410 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45EE66FE13361C0C00F7C0EF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45052B561335870800A59410 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45EE66FC13358D1600F7C0EF /* NSColor+RGBString.h in Sources */,
+				4567EFF21339477D00948C4A /* KAMaterial.m in Sources */,
 				45EE66FD13358D1600F7C0EF /* NSColor+RGBString.m in Sources */,
-				45EE66F013358C7700F7C0EF /* KAPrimitive.h in Sources */,
 				45EE66F113358C7700F7C0EF /* KAPrimitive.m in Sources */,
-				45EE66F213358C7700F7C0EF /* KASphere.h in Sources */,
 				45EE66F313358C7700F7C0EF /* KASphere.m in Sources */,
-				45EE66F413358C7700F7C0EF /* KAPoint3d.h in Sources */,
 				45EE66F513358C7700F7C0EF /* KAPoint3d.m in Sources */,
-				45EE66F613358C7700F7C0EF /* KAVector3d.h in Sources */,
 				45EE66F713358C7700F7C0EF /* KAVector3d.m in Sources */,
-				45EE66F813358C7700F7C0EF /* KARay.h in Sources */,
 				45EE66F913358C7700F7C0EF /* KARay.m in Sources */,
-				45EE66FA13358C7700F7C0EF /* KAMaterial.h in Sources */,
-				45EE66FB13358C7700F7C0EF /* KAMaterial.m in Sources */,
 				45EE66E4133588F900F7C0EF /* GHUnitTestMain.m in Sources */,
-				45EE66EF13358A9800F7C0EF /* SphereTest.m in Sources */,
+				45EE66EF13358A9800F7C0EF /* KASphereTest.m in Sources */,
+				4567EFED133936A600948C4A /* KAVector3dTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +457,7 @@
 				453884E8132EBB2C002A4196 /* KAPoint3d.m in Sources */,
 				453884EA132EBE10002A4196 /* KASphere.m in Sources */,
 				453884ED132ED530002A4196 /* KAVector3d.m in Sources */,
-				450D4749133536D800D6A651 /* KAMaterial.m in Sources */,
+				4567EFF11339476800948C4A /* KAMaterial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,17 +470,6 @@
 			targetProxy = 45EE66DE1335874600F7C0EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		45052B601335870800A59410 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45052B611335870800A59410 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		45052B701335870800A59410 /* Debug */ = {

@@ -42,7 +42,7 @@
     // Find the distance vector between the sphere center and the ray origin
     KAVector3d* distance = [KAVector3d vectorFromPoint:self.position
                                     substractedByPoint:ray.origin];
-        
+    
     double B = [[distance multiplyByVector:ray.direction] dot];
     double D = B * B - [[distance multiplyByVector:distance] dot] + self.radius * self.radius;
     
@@ -52,7 +52,7 @@
     
     double t0 = B - sqrt(D);
     double t1 = B + sqrt(D);
-    
+        
     if((t0 > 0.1f) && (t0 < intersectionDistance)) {
         intersectionDistance = (float)t0;
     }
