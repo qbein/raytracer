@@ -20,6 +20,10 @@
              y:(float)ay
           andZ:(float)az;
 
++(id)vectorWithX:(float)ax
+               y:(float)ay
+            andZ:(float)az;
+
 +(id)vectorFromPoint:(KAPoint3d*)aPoint;
 
 +(id)vectorFromPoint:(KAPoint3d*)pointA
@@ -43,6 +47,8 @@
 -(KAVector3d*)multiplyByFloat:(float)aFloat;
 
 -(KAVector3d*)divideByFloat:(float)aFloat;
+
+-(float)dotProduct:(KAVector3d*)anotherVector;
 
 -(float)dot;
 
