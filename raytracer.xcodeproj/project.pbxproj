@@ -26,17 +26,16 @@
 		453884BC132CCF24002A4196 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884B3132CCF24002A4196 /* SBJsonWriter.m */; };
 		453884D5132D706A002A4196 /* NSColor+RGBString.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884D4132D706A002A4196 /* NSColor+RGBString.m */; };
 		453884D8132D7B58002A4196 /* KALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884D7132D7B54002A4196 /* KALight.m */; };
-		453884E4132EBB0B002A4196 /* KAPrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E1132EBB0B002A4196 /* KAPrimitive.m */; };
 		453884E8132EBB2C002A4196 /* KAPoint3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E7132EBB2C002A4196 /* KAPoint3d.m */; };
 		453884EA132EBE10002A4196 /* KASphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E9132EBE0F002A4196 /* KASphere.m */; };
 		453884ED132ED530002A4196 /* KAVector3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884EC132ED52E002A4196 /* KAVector3d.m */; };
 		4567EFED133936A600948C4A /* KAVector3dTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567EFEA133935A700948C4A /* KAVector3dTest.m */; };
 		4567EFF11339476800948C4A /* KAMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567EFF01339476800948C4A /* KAMaterial.m */; };
 		4567EFF21339477D00948C4A /* KAMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567EFF01339476800948C4A /* KAMaterial.m */; };
+		45A38444133A986000494ACE /* KARayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A38443133A986000494ACE /* KARayTest.m */; };
 		45EE66DC1335873A00F7C0EF /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EE66DB1335873A00F7C0EF /* GHUnit.framework */; };
 		45EE66E4133588F900F7C0EF /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE66E2133588EE00F7C0EF /* GHUnitTestMain.m */; };
 		45EE66EF13358A9800F7C0EF /* KASphereTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE66EE13358A9800F7C0EF /* KASphereTest.m */; };
-		45EE66F113358C7700F7C0EF /* KAPrimitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E1132EBB0B002A4196 /* KAPrimitive.m */; };
 		45EE66F313358C7700F7C0EF /* KASphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E9132EBE0F002A4196 /* KASphere.m */; };
 		45EE66F513358C7700F7C0EF /* KAPoint3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884E7132EBB2C002A4196 /* KAPoint3d.m */; };
 		45EE66F713358C7700F7C0EF /* KAVector3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 453884EC132ED52E002A4196 /* KAVector3d.m */; };
@@ -68,8 +67,6 @@
 
 /* Begin PBXFileReference section */
 		45052B5A1335870800A59410 /* tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		45052B5F1335870800A59410 /* tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tests-Info.plist"; sourceTree = "<group>"; };
-		45052B631335870800A59410 /* tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tests-Prefix.pch"; sourceTree = "<group>"; };
 		450D474C1335594D00D6A651 /* scene2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = scene2.json; path = "Supporting Files/scene2.json"; sourceTree = "<group>"; };
 		4538845813296AA3002A4196 /* raytracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		4538845C13296AA3002A4196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,8 +105,6 @@
 		453884D4132D706A002A4196 /* NSColor+RGBString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+RGBString.m"; path = "Classes/Categories/NSColor+RGBString.m"; sourceTree = "<group>"; };
 		453884D6132D7B52002A4196 /* KALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KALight.h; path = Classes/KALight.h; sourceTree = "<group>"; };
 		453884D7132D7B54002A4196 /* KALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KALight.m; path = Classes/KALight.m; sourceTree = "<group>"; };
-		453884E0132EBB0B002A4196 /* KAPrimitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAPrimitive.h; sourceTree = "<group>"; };
-		453884E1132EBB0B002A4196 /* KAPrimitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAPrimitive.m; sourceTree = "<group>"; };
 		453884E2132EBB0B002A4196 /* KASphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASphere.h; sourceTree = "<group>"; };
 		453884E6132EBB2C002A4196 /* KAPoint3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAPoint3d.h; sourceTree = "<group>"; };
 		453884E7132EBB2C002A4196 /* KAPoint3d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAPoint3d.m; sourceTree = "<group>"; };
@@ -119,6 +114,9 @@
 		4567EFEA133935A700948C4A /* KAVector3dTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAVector3dTest.m; path = Tests/KAVector3dTest.m; sourceTree = "<group>"; };
 		4567EFEF1339476800948C4A /* KAMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KAMaterial.h; path = Classes/KAMaterial.h; sourceTree = "<group>"; };
 		4567EFF01339476800948C4A /* KAMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KAMaterial.m; path = Classes/KAMaterial.m; sourceTree = "<group>"; };
+		45A3843C133A7B4F00494ACE /* tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tests-Info.plist"; sourceTree = "<group>"; };
+		45A3843D133A7B4F00494ACE /* tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tests-Prefix.pch"; sourceTree = "<group>"; };
+		45A38443133A986000494ACE /* KARayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KARayTest.m; path = Tests/KARayTest.m; sourceTree = "<group>"; };
 		45D7299B13357F39003E2EA5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45D7299E13357F39003E2EA5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		45D7299F13357F39003E2EA5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -163,10 +161,10 @@
 		45052B5E1335870800A59410 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				45A3843C133A7B4F00494ACE /* tests-Info.plist */,
+				45A3843D133A7B4F00494ACE /* tests-Prefix.pch */,
 				45EE67001338FA5A00F7C0EF /* README.md */,
 				45EE66E2133588EE00F7C0EF /* GHUnitTestMain.m */,
-				45052B5F1335870800A59410 /* tests-Info.plist */,
-				45052B631335870800A59410 /* tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,8 +289,6 @@
 		453884DF132EBB0A002A4196 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
-				453884E0132EBB0B002A4196 /* KAPrimitive.h */,
-				453884E1132EBB0B002A4196 /* KAPrimitive.m */,
 				453884E2132EBB0B002A4196 /* KASphere.h */,
 				453884E9132EBE0F002A4196 /* KASphere.m */,
 				453884E6132EBB2C002A4196 /* KAPoint3d.h */,
@@ -317,6 +313,7 @@
 		45EE66E51335890400F7C0EF /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				45A38443133A986000494ACE /* KARayTest.m */,
 				45EE66EE13358A9800F7C0EF /* KASphereTest.m */,
 				4567EFEA133935A700948C4A /* KAVector3dTest.m */,
 			);
@@ -422,7 +419,6 @@
 			files = (
 				4567EFF21339477D00948C4A /* KAMaterial.m in Sources */,
 				45EE66FD13358D1600F7C0EF /* NSColor+RGBString.m in Sources */,
-				45EE66F113358C7700F7C0EF /* KAPrimitive.m in Sources */,
 				45EE66F313358C7700F7C0EF /* KASphere.m in Sources */,
 				45EE66F513358C7700F7C0EF /* KAPoint3d.m in Sources */,
 				45EE66F713358C7700F7C0EF /* KAVector3d.m in Sources */,
@@ -430,6 +426,7 @@
 				45EE66E4133588F900F7C0EF /* GHUnitTestMain.m in Sources */,
 				45EE66EF13358A9800F7C0EF /* KASphereTest.m in Sources */,
 				4567EFED133936A600948C4A /* KAVector3dTest.m in Sources */,
+				45A38444133A986000494ACE /* KARayTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +450,6 @@
 				453884BC132CCF24002A4196 /* SBJsonWriter.m in Sources */,
 				453884D5132D706A002A4196 /* NSColor+RGBString.m in Sources */,
 				453884D8132D7B58002A4196 /* KALight.m in Sources */,
-				453884E4132EBB0B002A4196 /* KAPrimitive.m in Sources */,
 				453884E8132EBB2C002A4196 /* KAPoint3d.m in Sources */,
 				453884EA132EBE10002A4196 /* KASphere.m in Sources */,
 				453884ED132ED530002A4196 /* KAVector3d.m in Sources */,

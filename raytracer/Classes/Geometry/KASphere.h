@@ -6,12 +6,12 @@
 //  Copyright 2011 aadnoy.info. All rights reserved.
 //
 
-#import "KAPrimitive.h"
-
 @class KAPoint3d;
+@class KAVector3d;
 @class KAMaterial;
+@class KARay;
 
-@interface KASphere : KAPrimitive
+@interface KASphere : NSObject
 
 @property (retain) KAPoint3d* position;
 @property float radius;
@@ -20,5 +20,8 @@
 -(id)initWithPosition:(KAPoint3d*)aPosition
          radius:(float)aRadius
        andMaterial:(KAMaterial*)aMaterial;
+
+-(float)findIntersectionForRay:(KARay*)ray
+                   withMaxDepth:(float)maxDepth;
 
 @end

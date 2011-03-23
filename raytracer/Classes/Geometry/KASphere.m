@@ -35,7 +35,7 @@
     [super dealloc];
 }
 
--(float)findIntersectionsForRay:(KARay *)ray
+-(float)findIntersectionForRay:(KARay *)ray
                    withMaxDepth:(float)maxDepth {
     float intersectionDistance = maxDepth;
     
