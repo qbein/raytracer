@@ -1,20 +1,23 @@
 {
     "version": "1.0-alpha",
+    
     "width": "640",
     "height": "480",
+    
+    "scale": "3",
     
     "materials": {
         "material1": {
             "diffuse": "255,255,0",
-            "reflection": "0.5"
+            "reflection": "0.6"
         },
         "material2": {
             "diffuse": "0,255,255",
-            "reflection": "0.5"
+            "reflection": "0.6"
         },
         "material3": {
             "diffuse": "255,0,255",
-            "reflection": "0.5"
+            "reflection": "0.6"
         }
     },
     

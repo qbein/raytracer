@@ -18,6 +18,7 @@
 @property (retain) NSMutableDictionary* materials;
 @property int width;
 @property int height;
+@property float scale;
 @property (retain) NSString* version;
 
 -(id)initFromFile:(NSString*)filename;

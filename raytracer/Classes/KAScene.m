@@ -22,6 +22,7 @@
 @synthesize materials;
 @synthesize width;
 @synthesize height;
+@synthesize scale;
 @synthesize version;
 
 +(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict {
@@ -85,8 +86,13 @@
         NSLog(@"Scene file could be incompatible with this raytracer version (scene v. %@, renderer v. %@)", self.version, [NSString stringWithUTF8String:VERSION]);
     }
     
-    self.width = [[scene objectForKey:@"width"] intValue];
-    self.height = [[scene objectForKey:@"height"] intValue];
+    self.scale = 1.0f;
+    if([scene objectForKey:@"scale"]) {
+        self.scale = [[scene objectForKey:@"scale"] floatValue];
+    }
+    
+    self.width = [[scene objectForKey:@"width"] intValue] * self.scale;
+    self.height = [[scene objectForKey:@"height"] intValue] * self.scale;
     
     [[scene objectForKey:@"materials"] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         KAMaterial* material = [[KAMaterial alloc] initWithRGBString:[obj objectForKey:@"diffuse"]
@@ -102,9 +108,9 @@
         if([type isEqualToString:@"light"]) {
             KALight* light = [KALight alloc];
             
-            [light initWithPosition:[KAPoint3d pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj] 
-                                                       y:[KAScene floatValueForKey:@"y" inDictionary:obj]
-                                                    andZ:[KAScene floatValueForKey:@"z" inDictionary:obj]]
+            [light initWithPosition:[KAPoint3d pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj] * self.scale 
+                                                       y:[KAScene floatValueForKey:@"y" inDictionary:obj] * self.scale 
+                                                    andZ:[KAScene floatValueForKey:@"z" inDictionary:obj] * self.scale]
                             andColor:[NSColor colorWithRGBString:[obj objectForKey:@"color"]]];
             
             [self.lights addObject:[light autorelease]];
@@ -112,10 +118,10 @@
         else if([type isEqualToString:@"sphere"]) {
             KASphere* sphere = [KASphere alloc];
             
-            [sphere initWithPosition:[KAPoint3d pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj] 
-                                                       y:[KAScene floatValueForKey:@"y" inDictionary:obj]
-                                                    andZ:[KAScene floatValueForKey:@"z" inDictionary:obj]]
-                              radius:[KAScene floatValueForKey:@"r" inDictionary:obj]
+            [sphere initWithPosition:[KAPoint3d pointWithX:[KAScene floatValueForKey:@"x" inDictionary:obj]  * self.scale 
+                                                       y:[KAScene floatValueForKey:@"y" inDictionary:obj] * self.scale
+                                                    andZ:[KAScene floatValueForKey:@"z" inDictionary:obj] * self.scale]
+                              radius:[KAScene floatValueForKey:@"r" inDictionary:obj] * self.scale
                          andMaterial:[materials objectForKey:[obj objectForKey:@"material"]]];
             
             [self.primitives addObject:[sphere autorelease]];
