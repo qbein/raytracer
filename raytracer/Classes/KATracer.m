@@ -38,15 +38,20 @@
     
     [scene retain];
     KAImage* image = [[KAImage alloc] initWithWidth:scene.width andHeight:scene.height];
+    KARay* ray;
+    
+    NSDate* start = [NSDate date];
     
     // TODO: Optimize with GCD block iterating?
     for(int y=0; y<scene.height; y++) {
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        
         for(int x=0; x<scene.width; x++) {
             float red = 0, green = 0, blue = 0;
             float coef = 1.0f;
             int level = 0;
             
-            KARay* ray = [[KARay alloc] initWithOrigin:[KAPoint3d pointWithX:x y:y andZ:RAY_STARTING_POINT]
+            ray = [[KARay alloc] initWithOrigin:[KAPoint3d pointWithX:x y:y andZ:RAY_STARTING_POINT]
                                           andDirection:[KAVector3d vectorFromPoint:[KAPoint3d pointWithX:0 y:0 andZ:1.0f]]];
             
             do {
@@ -56,7 +61,7 @@
                 // Find the closest intersecting primitive
                 for (id primitive in scene.primitives) {
                     float intersectDistance = [primitive findIntersectionForRay:ray
-                                                                    withMaxDepth:nearestIntersectDistance];
+                                                                   withMaxDepth:nearestIntersectDistance];
 
                     if(intersectDistance < nearestIntersectDistance) {
                         nearestIntersectDistance = intersectDistance;
@@ -82,7 +87,7 @@
                     
                     // If the lightsource is in shadow behind the sphere, continue
                     if([[intersectionToLightVector multiplyByVector:normalVector] dot] <= 0.0f) {
-                       continue;
+                        continue;
                     }
                     
                     if([intersectionToLightVector length] <= 0.0f) {
@@ -123,18 +128,25 @@
                 
                 KARay* bouncedRay = [ray rayBouncedOfSphereAt:intersectionPoint 
                                             usingNormalVector:normalVector];
+                
                 [ray release];
-                ray = nil;
                 ray = bouncedRay;
                 [ray retain];
                 
                 level++;
             } while ((coef > 0.0f) && (level < 10));
             
+            if(ray) [ray release];
+            
             [image setColor:[NSColor colorWithDeviceRed:red green:green blue:blue alpha:1.0f] AtX:x y:y];
         }
-    }
         
+        [pool release];
+    }
+     
+    NSTimeInterval renderTime = [[NSDate date] timeIntervalSinceDate:start];
+    NSLog(@"Rendered scene in %f seconds", renderTime);
+    
     [image writeImageToFile:self.filename];
     
     [image release];
