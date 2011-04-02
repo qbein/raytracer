@@ -23,6 +23,7 @@
 @synthesize width;
 @synthesize height;
 @synthesize scale;
+@synthesize zoom;
 @synthesize version;
 
 +(float)floatValueForKey:(NSString*)key inDictionary:(NSDictionary*)dict {
@@ -89,6 +90,13 @@
     self.scale = 1.0f;
     if([scene objectForKey:@"scale"]) {
         self.scale = [[scene objectForKey:@"scale"] floatValue];
+        NSLog(@"Scale: %f", self.scale);
+    }
+    
+    self.zoom = 1.0f;
+    if([scene objectForKey:@"zoom"]) {
+        self.zoom = [[scene objectForKey:@"zoom"] floatValue] * self.zoom;
+        NSLog(@"Zoom: %f", self.zoom);
     }
     
     self.width = [[scene objectForKey:@"width"] intValue] * self.scale;
@@ -96,7 +104,9 @@
     
     [[scene objectForKey:@"materials"] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         KAMaterial* material = [[KAMaterial alloc] initWithRGBString:[obj objectForKey:@"diffuse"]
-                                                        andReflection:[[obj objectForKey:@"reflection"] floatValue]];
+                                                          reflection:[[obj objectForKey:@"reflection"] floatValue]
+                                                            specular:[[obj objectForKey:@"specular"] floatValue]
+                                                    andSpecularPower:[[obj objectForKey:@"specularPower"] floatValue]];
         [self.materials setValue:[material autorelease] forKey:key];
     }];
     

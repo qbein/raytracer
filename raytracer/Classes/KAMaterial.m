@@ -13,14 +13,18 @@
 @implementation KAMaterial
 
 @synthesize color;
-@synthesize reflection;
+@synthesize reflection, specular, specularPower;
 
 -(id)initWithRGBString:(NSString*)rgbString
-         andReflection:(float)aReflection {
+            reflection:(float)aReflection
+              specular:(float)aSpecular
+      andSpecularPower:(float)aPower {
     if(![super init]) return nil;
     
     self.color = [[NSColor colorWithRGBString:rgbString] retain];
     self.reflection = aReflection;
+    self.specular = aSpecular;
+    self.specularPower = aPower;
     
     return self;
 }

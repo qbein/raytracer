@@ -12,9 +12,11 @@
 @interface KAMaterial : NSObject
 
 @property (retain) NSColor* color;
-@property float reflection;
+@property float reflection, specular, specularPower;
 
 -(id)initWithRGBString:(NSString*)rgbString
-         andReflection:(float)aReflection;
+            reflection:(float)aReflection
+              specular:(float)aSpecular
+      andSpecularPower:(float)aPower;
 
 @end

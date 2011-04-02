@@ -51,8 +51,18 @@
             float coef = 1.0f;
             int level = 0;
             
-            ray = [[KARay alloc] initWithOrigin:[KAPoint3d pointWithX:x y:y andZ:RAY_STARTING_POINT]
-                                          andDirection:[KAVector3d vectorFromPoint:[KAPoint3d pointWithX:0 y:0 andZ:1.0f]]];
+            // Calculate view directional vector
+            KAPoint3d* rayStartPoint = [KAPoint3d pointWithX:scene.width / 2
+                                                           y:scene.height / 2
+                                                        andZ:RAY_STARTING_POINT * scene.zoom];
+            
+            KAPoint3d* rayScreenIntersectionPoint = [KAPoint3d pointWithX:x y:y andZ:0];
+            
+            KAVector3d* rayDirection = [[KAVector3d vectorFromPoint:rayScreenIntersectionPoint
+                                                 substractedByPoint:rayStartPoint] normalizedVector];
+            
+            ray = [[KARay alloc] initWithOrigin:[KAPoint3d pointWithX:scene.width / 2 y:scene.height / 2 andZ:RAY_STARTING_POINT]
+                                   andDirection:rayDirection];
             
             do {
                 float nearestIntersectDistance = RAY_MAX_LENGTH;
@@ -84,13 +94,16 @@
                 for (KALight* light in scene.lights) {
                     KAVector3d* intersectionToLightVector = [KAVector3d vectorFromPoint:light.position
                                                                      substractedByPoint:intersectionPoint];
+                    [intersectionToLightVector retain];
                     
                     // If the lightsource is in shadow behind the sphere, continue
                     if([[intersectionToLightVector multiplyByVector:normalVector] dot] <= 0.0f) {
+                        [intersectionToLightVector release];
                         continue;
                     }
                     
                     if([intersectionToLightVector length] <= 0.0f) {
+                        [intersectionToLightVector release];
                         continue;
                     }
                     
@@ -109,17 +122,32 @@
                     }
                     
                     if(!inShadow) {
+                        // Lambert
                         float lambert = [[lightRay.direction multiplyByVector:normalVector] dot] * coef;
                         
                         if(lambert < 0) {
                             lambert *= -1;
                         }
-                        
+                         
                         red += lambert * [light.color redComponent] * [currentPrimitive.material.color redComponent];
                         green += lambert * [light.color greenComponent] * [currentPrimitive.material.color greenComponent];
                         blue += lambert * [light.color blueComponent] * [currentPrimitive.material.color blueComponent];
+                        
+                        // Blinn-Phong
+                        KAVector3d* blinnDirection = [lightRay.direction substractVector:ray.direction];
+                        float temperature = [blinnDirection length];
+                        if(temperature != 0.0f) {
+                            blinnDirection = [blinnDirection multiplyByFloat:(1.0f / temperature)];
+                            float blinnTerm = fmax([[blinnDirection multiplyByVector:normalVector] dot], 0.0f);
+                            blinnTerm = powf(blinnTerm, currentPrimitive.material.specularPower) * coef;
+                            
+                            red += blinnTerm * currentPrimitive.material.specular * [light.color brightnessComponent];
+                            green += blinnTerm * currentPrimitive.material.specular * [light.color brightnessComponent];
+                            blue += blinnTerm * currentPrimitive.material.specular * [light.color brightnessComponent];
+                        }
                     }
                     
+                    [intersectionToLightVector release];
                     [lightRay release];
                 }
                 
