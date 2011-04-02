@@ -175,7 +175,14 @@
     NSTimeInterval renderTime = [[NSDate date] timeIntervalSinceDate:start];
     NSLog(@"Rendered scene in %f seconds", renderTime);
     
-    [image writeImageToFile:self.filename];
+    // Output jpeg image if jpg output file is specified, default to tiff if not
+    if([self.filename rangeOfString:@".jpg"].length > 0) {
+        NSLog(@"Written image as jpg");
+        [image writeJpegImageToFile:self.filename];
+    } else {
+        NSLog(@"Written image as tiff");
+        [image writeTiffImageToFile:self.filename];
+    }
     
     [image release];
     [scene release];

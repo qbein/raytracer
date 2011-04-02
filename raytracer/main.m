@@ -15,13 +15,13 @@ int main (int argc, const char * argv[])
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     NSFileManager* fileManager = [[NSFileManager alloc] init];
     
-    NSString* outputFile = @"scene.tiff";
+    NSString* outputFile = @"scene.jpg";
     NSString* sceneFile = nil;
     
     for(int i=0; i<argc; i++) {
         if(strlen(argv[i]) > 2) {
             if(strstr(argv[i], "-h")) {
-                NSLog(@"Usage: raytracer -s/scenefile.json -o/outputfile.tiff");
+                NSLog(@"Usage: raytracer -s/scenefile.json -o/outputfile.[jpg|tiff]");
                 return 0;
             }
             else if(strstr(argv[i], "-o") != NULL) {

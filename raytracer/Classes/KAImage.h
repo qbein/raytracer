@@ -21,6 +21,8 @@
             AtX:(NSInteger)x
               y:(NSInteger)y;
 
--(void)writeImageToFile:(NSString*)fileName;
+-(void)writeTiffImageToFile:(NSString*)fileName;
+
+-(void)writeJpegImageToFile:(NSString*)filename;
 
 @end

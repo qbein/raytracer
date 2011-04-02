@@ -42,8 +42,18 @@
     [imageRep setColor:color atX:x y:y];
 }
 
--(void)writeImageToFile:(NSString*)fileName {
+-(void)writeTiffImageToFile:(NSString*)fileName {
 	[[imageRep TIFFRepresentation] writeToFile:fileName atomically:YES];
+}
+
+-(void)writeJpegImageToFile:(NSString*)filename {
+    NSNumber* compressionFactor = [NSNumber numberWithFloat:0.8];
+    NSDictionary* imageProperties = [NSDictionary dictionaryWithObject:compressionFactor
+                                                                forKey:NSImageCompressionFactor];
+    NSData* bitmapData = [imageRep representationUsingType:NSJPEGFileType
+                                                properties:imageProperties];
+    
+    [bitmapData writeToFile:filename atomically:YES];
 }
 
 @end
